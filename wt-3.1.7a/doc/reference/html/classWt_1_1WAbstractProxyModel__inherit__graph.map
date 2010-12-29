@@ -1,0 +1,7 @@
+<map id="G" name="G">
+<area shape="rect" href="$classWt_1_1WAggregateProxyModel.html" title="A proxy model for Wt&#39;s item models that provides column aggregation." alt="" coords="5,239,200,265"/>
+<area shape="rect" href="$classWt_1_1WBatchEditProxyModel.html" title="A proxy model for Wt&#39;s item models that provides batch editing." alt="" coords="224,239,413,265"/>
+<area shape="rect" href="$classWt_1_1WSortFilterProxyModel.html" title="A proxy model for Wt&#39;s item models that provides filtering and/or sorting." alt="" coords="437,239,624,265"/>
+<area shape="rect" href="$classWt_1_1WAbstractItemModel.html" title="An abstract model for use with Wt&#39;s view classes." alt="" coords="231,84,407,111"/>
+<area shape="rect" href="$classWt_1_1WObject.html" title="A base class for objects that participate in the signal/slot system." alt="" coords="271,7,367,33"/>
+</map>

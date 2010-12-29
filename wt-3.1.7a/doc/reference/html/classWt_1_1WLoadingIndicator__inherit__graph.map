@@ -1,0 +1,4 @@
+<map id="G" name="G">
+<area shape="rect" href="$classWt_1_1WDefaultLoadingIndicator.html" title="A default loading indicator." alt="" coords="5,84,213,111"/>
+<area shape="rect" href="$classWt_1_1WOverlayLoadingIndicator.html" title="A more obvious loading indicator that grays the window." alt="" coords="237,84,445,111"/>
+</map>

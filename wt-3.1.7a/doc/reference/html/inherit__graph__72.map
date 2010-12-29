@@ -1,0 +1,153 @@
+<map id="G" name="G">
+<area shape="rect" href="$classWt_1_1WLayoutItem.html" title="An abstract base class for items that can participate in a layout." alt="" coords="7,309,135,336"/>
+<area shape="rect" href="$classWt_1_1WLayout.html" title="An abstract base class for layout managers." alt="" coords="237,335,336,361"/>
+<area shape="rect" href="$classWt_1_1WWidgetItem.html" title="A layout item that holds a single widget." alt="" coords="223,284,351,311"/>
+<area shape="rect" href="$classWt_1_1WBorderLayout.html" title="A layout manager which divides the container region in five regions." alt="" coords="459,411,600,437"/>
+<area shape="rect" href="$classWt_1_1WBoxLayout.html" title="A layout manager which arranges widgets horizontally or vertically." alt="" coords="468,208,591,235"/>
+<area shape="rect" href="$classWt_1_1WDefaultLayout.html" title="A default layout manager." alt="" coords="457,259,601,285"/>
+<area shape="rect" href="$classWt_1_1WFitLayout.html" title="A layout manager which spans a single widget to all available space." alt="" coords="473,309,585,336"/>
+<area shape="rect" href="$classWt_1_1WGridLayout.html" title="A layout manager which arranges widgets in a grid." alt="" coords="467,360,592,387"/>
+<area shape="rect" href="$classWt_1_1WHBoxLayout.html" title="A layout manager which arranges widgets horizontally." alt="" coords="715,208,848,235"/>
+<area shape="rect" href="$classWt_1_1WVBoxLayout.html" title="A layout manager which arranges widgets vertically." alt="" coords="716,157,847,184"/>
+<area shape="rect" href="$classWt_1_1WAccordionLayout.html" title="A layout manager which shows one item at a time." alt="" coords="701,259,861,285"/>
+<area shape="rect" href="$classWt_1_1WLoadingIndicator.html" title="An abstract interface for a loading indicator." alt="" coords="985,436,1145,463"/>
+<area shape="rect" href="$classWt_1_1WDefaultLoadingIndicator.html" title="A default loading indicator." alt="" coords="1239,487,1447,513"/>
+<area shape="rect" href="$classWt_1_1WOverlayLoadingIndicator.html" title="A more obvious loading indicator that grays the window." alt="" coords="1239,436,1447,463"/>
+<area shape="rect" href="$classWt_1_1WObject.html" title="A base class for objects that participate in the signal/slot system." alt="" coords="23,2095,119,2121"/>
+<area shape="rect" href="$classWt_1_1Ext_1_1ToolTipConfig.html" title="A configuration object for tool tips." alt="" coords="209,2525,364,2552"/>
+<area shape="rect" href="$classWt_1_1WAbstractArea.html" title="Abstract base class for interactive areas in a widget." alt="" coords="217,1752,356,1779"/>
+<area shape="rect" href="$classWt_1_1WAbstractItemDelegate.html" title="Abstract delegate class for rendering an item in a MVC view." alt="" coords="189,1816,384,1843"/>
+<area shape="rect" href="$classWt_1_1WAbstractItemModel.html" title="An abstract model for use with Wt&#39;s view classes." alt="" coords="199,1917,375,1944"/>
+<area shape="rect" href="$classWt_1_1WApplication.html" title="Represents an application instance for a single session." alt="" coords="224,1651,349,1677"/>
+<area shape="rect" href="$classWt_1_1WButtonGroup.html" title="A class for grouping radio buttons logically together." alt="" coords="217,1701,356,1728"/>
+<area shape="rect" href="$classWt_1_1WCanvasPaintDevice.html" title="A paint device for rendering using the HTML 5 &lt;canvas&gt; element." alt="" coords="199,2576,375,2603"/>
+<area shape="rect" href="$classWt_1_1WItemSelectionModel.html" title="A class that represents a selection for a WAbstractItemView." alt="" coords="196,1968,377,1995"/>
+<area shape="rect" href="$classWt_1_1WMenuItem.html" title="A single item in a menu." alt="" coords="227,2019,347,2045"/>
+<area shape="rect" href="$classWt_1_1WResource.html" title="An object which can be rendered in the HTTP protocol." alt="" coords="229,2475,344,2501"/>
+<area shape="rect" href="$classWt_1_1WScrollBar.html" title="A scrollbar attached to a scroll area." alt="" coords="231,2120,343,2147"/>
+<area shape="rect" href="$classWt_1_1WSignalMapper.html" title="A utility class to connect multiple senders to a single slot." alt="" coords="184,2171,389,2197"/>
+<area shape="rect" href="$classWt_1_1WSocketNotifier.html" title="A utility class for asynchronous notification of socket activity." alt="" coords="213,2221,360,2248"/>
+<area shape="rect" href="$classWt_1_1WSound.html" title="Utility class to play a sound." alt="" coords="239,2272,335,2299"/>
+<area shape="rect" href="$classWt_1_1WTableColumn.html" title="A table column." alt="" coords="219,2323,355,2349"/>
+<area shape="rect" href="$classWt_1_1WTableRow.html" title="A table row." alt="" coords="231,2373,343,2400"/>
+<area shape="rect" href="$classWt_1_1WTimer.html" title="A utility class which provides timer signals and single&#45;shot timers." alt="" coords="241,2424,332,2451"/>
+<area shape="rect" href="$classWt_1_1WValidator.html" title="A validator is used to validate user input according to pre&#45;defined rules." alt="" coords="231,2069,343,2096"/>
+<area shape="rect" href="$classWt_1_1WWidget.html" title="The abstract base class for a user&#45;interface component." alt="" coords="237,1385,336,1412"/>
+<area shape="rect" href="$classWt_1_1WCircleArea.html" title="A interactive area in a widget, specified by a circle." alt="" coords="469,1689,589,1716"/>
+<area shape="rect" href="$classWt_1_1WPolygonArea.html" title="An interactive area in a widget, specified by a polygon." alt="" coords="461,1740,597,1767"/>
+<area shape="rect" href="$classWt_1_1WRectArea.html" title="A interactive area in a widget, specified by a rectangle." alt="" coords="473,1639,585,1665"/>
+<area shape="rect" href="$classWt_1_1WItemDelegate.html" title="Standard delegate class for rendering a view item." alt="" coords="457,1791,601,1817"/>
+<area shape="rect" href="$classWt_1_1WAbstractListModel.html" title="An abstract list model for use with Wt&#39;s view classes." alt="" coords="445,1943,613,1969"/>
+<area shape="rect" href="$classWt_1_1WAbstractProxyModel.html" title="An abstract proxy model for Wt&#39;s item models." alt="" coords="439,1993,620,2020"/>
+<area shape="rect" href="$classWt_1_1WAbstractTableModel.html" title="An abstract table model for use with Wt&#39;s view classes." alt="" coords="440,1841,619,1868"/>
+<area shape="rect" href="$classWt_1_1WStandardItemModel.html" title="A standard data model, which stores its data in memory." alt="" coords="439,1892,620,1919"/>
+<area shape="rect" href="$classWt_1_1WStringListModel.html" title="An model that manages a list of strings." alt="" coords="704,1943,859,1969"/>
+<area shape="rect" href="$classWt_1_1WAggregateProxyModel.html" title="A proxy model for Wt&#39;s item models that provides column aggregation." alt="" coords="684,1993,879,2020"/>
+<area shape="rect" href="$classWt_1_1WBatchEditProxyModel.html" title="A proxy model for Wt&#39;s item models that provides batch editing." alt="" coords="687,2044,876,2071"/>
+<area shape="rect" href="$classWt_1_1WSortFilterProxyModel.html" title="A proxy model for Wt&#39;s item models that provides filtering and/or sorting." alt="" coords="688,2095,875,2121"/>
+<area shape="rect" href="$classWt_1_1Dbo_1_1QueryModel.html" title="A Wt MVC Model to view/edit query results." alt="" coords="669,1892,893,1919"/>
+<area shape="rect" href="$classWt_1_1WSubMenuItem.html" title="A menu item that contains a nested sub menu." alt="" coords="457,2044,601,2071"/>
+<area shape="rect" href="$classWt_1_1Ext_1_1DataStore.html" title="A resource that serializes data from a data model." alt="" coords="460,2475,599,2501"/>
+<area shape="rect" href="$classWt_1_1WFileResource.html" title="A resource which streams data from a local file." alt="" coords="463,2525,596,2552"/>
+<area shape="rect" href="$classWt_1_1WMemoryResource.html" title="A resource which streams data from memory." alt="" coords="447,2424,612,2451"/>
+<area shape="rect" href="$classWt_1_1WPdfImage.html" title="A paint device for rendering to a PDF." alt="" coords="472,2627,587,2653"/>
+<area shape="rect" href="$classWt_1_1WRasterImage.html" title="A paint device for rendering to a raster image." alt="" coords="461,2576,597,2603"/>
+<area shape="rect" href="$classWt_1_1WSvgImage.html" title="A paint device for rendering using Scalable Vector Graphics (SVG)." alt="" coords="469,2677,589,2704"/>
+<area shape="rect" href="$classWt_1_1WDateValidator.html" title="A validator for date input." alt="" coords="457,2095,601,2121"/>
+<area shape="rect" href="$classWt_1_1WDoubleValidator.html" title="A validator for validating floating point user input." alt="" coords="451,2145,608,2172"/>
+<area shape="rect" href="$classWt_1_1WIntValidator.html" title="A validator that validates integer user input." alt="" coords="465,2196,593,2223"/>
+<area shape="rect" href="$classWt_1_1WLengthValidator.html" title="A validator that checks the string length of user input." alt="" coords="452,2247,607,2273"/>
+<area shape="rect" href="$classWt_1_1WRegExpValidator.html" title="A validator that checks user input against a regular expression." alt="" coords="451,2297,608,2324"/>
+<area shape="rect" href="$classWt_1_1WCompositeWidget.html" title="A widget that hides the implementation of composite widgets." alt="" coords="445,1385,613,1412"/>
+<area shape="rect" href="$classWt_1_1WWebWidget.html" title="A base class for widgets with an HTML counterpart." alt="" coords="467,740,592,767"/>
+<area shape="rect" href="$classWt_1_1WAbstractItemView.html" title="An abstract base class for item Views." alt="" coords="697,929,865,956"/>
+<area shape="rect" href="$classWt_1_1WCalendar.html" title="A calendar." alt="" coords="725,980,837,1007"/>
+<area shape="rect" href="$classWt_1_1WDatePicker.html" title="A date picker." alt="" coords="719,1031,844,1057"/>
+<area shape="rect" href="$classWt_1_1WDialog.html" title="A WDialog shows a dialog." alt="" coords="733,1081,829,1108"/>
+<area shape="rect" href="$classWt_1_1WGoogleMap.html" title="A widget that displays a google map." alt="" coords="717,1132,845,1159"/>
+<area shape="rect" href="$classWt_1_1WIconPair.html" title="A widget that shows one of two icons depending on its state." alt="" coords="729,1183,833,1209"/>
+<area shape="rect" href="$classWt_1_1WInPlaceEdit.html" title="A widget that provides in&#45;place&#45;editable text." alt="" coords="719,1233,844,1260"/>
+<area shape="rect" href="$classWt_1_1WMenu.html" title="A widget that shows a menu of options." alt="" coords="736,1284,827,1311"/>
+<area shape="rect" href="$classWt_1_1WPanel.html" title="A WPanel provides a container with a title bar." alt="" coords="736,1335,827,1361"/>
+<area shape="rect" href="$classWt_1_1WPopupMenu.html" title="A menu presented in a popup window." alt="" coords="716,1385,847,1412"/>
+<area shape="rect" href="$classWt_1_1WPopupMenuItem.html" title="An item in a popup menu." alt="" coords="701,1436,861,1463"/>
+<area shape="rect" href="$classWt_1_1WSlider.html" title="A horizontal or vertical slider control." alt="" coords="736,1487,827,1513"/>
+<area shape="rect" href="$classWt_1_1WSuggestionPopup.html" title="A widget which popups to assist in editing a textarea or lineedit." alt="" coords="697,1537,865,1564"/>
+<area shape="rect" href="$classWt_1_1WTabWidget.html" title="A widget that organizes contents in tab panes." alt="" coords="721,1588,841,1615"/>
+<area shape="rect" href="$classWt_1_1WTree.html" title="A widget that represents a navigatable tree." alt="" coords="740,1639,823,1665"/>
+<area shape="rect" href="$classWt_1_1WTreeNode.html" title="A single node in a tree." alt="" coords="724,1689,839,1716"/>
+<area shape="rect" href="$classWt_1_1WTreeTable.html" title="A table with a navigatable tree in the first column." alt="" coords="724,1740,839,1767"/>
+<area shape="rect" href="$classWt_1_1WValidationStatus.html" title="A widget that keeps track of the validation status of a form widget." alt="" coords="701,1791,861,1817"/>
+<area shape="rect" href="$classWt_1_1WVirtualImage.html" title="An abstract widget that shows a viewport to a virtually large image." alt="" coords="713,1841,849,1868"/>
+<area shape="rect" href="$classWt_1_1WTableView.html" title="An MVC View widget for tabular data." alt="" coords="1007,943,1124,969"/>
+<area shape="rect" href="$classWt_1_1WTreeView.html" title="A view class that displays a model as a tree or tree table." alt="" coords="1009,993,1121,1020"/>
+<area shape="rect" href="$classWt_1_1WMessageBox.html" title="A standard dialog for confirmation or to get simple user input." alt="" coords="997,1081,1133,1108"/>
+<area shape="rect" href="$classWt_1_1WTreeTableNode.html" title="A specialized tree node which allows additional data to be associated with each node." alt="" coords="992,1689,1139,1716"/>
+<area shape="rect" href="$classWt_1_1Ext_1_1Widget.html" title="An abstract base class for all Ext widgets." alt="" coords="724,765,839,792"/>
+<area shape="rect" href="$classWt_1_1WBreak.html" title="A widget that provides a line break between inline widgets." alt="" coords="735,816,828,843"/>
+<area shape="rect" href="$classWt_1_1WFileUpload.html" title="A widget that allows a file to be uploaded." alt="" coords="721,867,841,893"/>
+<area shape="rect" href="$classWt_1_1WFlashObject.html" title="A widget that renders a Flash object (also known as Flash movie)." alt="" coords="716,309,847,336"/>
+<area shape="rect" href="$classWt_1_1WInteractWidget.html" title="An abstract widget that can receive user&#45;interface interaction." alt="" coords="708,360,855,387"/>
+<area shape="rect" href="$classWt_1_1WScrollArea.html" title="A widget that adds scrolling capabilities to its content." alt="" coords="721,664,841,691"/>
+<area shape="rect" href="$classWt_1_1WViewWidget.html" title="An abstract base class for an MVC view that is rendered using a widget." alt="" coords="717,715,845,741"/>
+<area shape="rect" href="$classWt_1_1Ext_1_1Component.html" title="An abstract base class for widgets that can be visually disabled." alt="" coords="992,791,1139,817"/>
+<area shape="rect" href="$classWt_1_1Ext_1_1Menu.html" title="A menu presented in a popup window." alt="" coords="1012,892,1119,919"/>
+<area shape="rect" href="$classWt_1_1Ext_1_1SplitterHandle.html" title="A handle inside a splitter." alt="" coords="984,740,1147,767"/>
+<area shape="rect" href="$classWt_1_1Ext_1_1ToolBar.html" title="A class that represents a tool bar (or a menu bar)." alt="" coords="1005,841,1125,868"/>
+<area shape="rect" href="$classWt_1_1Ext_1_1AbstractButton.html" title="Abstract base class for a (toolbar) button or menu item." alt="" coords="1257,791,1428,817"/>
+<area shape="rect" href="$classWt_1_1Ext_1_1Calendar.html" title="A calendar." alt="" coords="1277,841,1408,868"/>
+<area shape="rect" href="$classWt_1_1Ext_1_1Container.html" title="A container class which manages its contents using layout managers." alt="" coords="1275,892,1411,919"/>
+<area shape="rect" href="$classWt_1_1Ext_1_1FormField.html" title="An abstract base class for form fields." alt="" coords="1276,968,1409,995"/>
+<area shape="rect" href="$classWt_1_1Ext_1_1Button.html" title="A button." alt="" coords="1544,791,1659,817"/>
+<area shape="rect" href="$classWt_1_1Ext_1_1MenuItem.html" title="An item in a menu." alt="" coords="1533,841,1669,868"/>
+<area shape="rect" href="$classWt_1_1Ext_1_1Panel.html" title="A container with a title and standard GUI elements." alt="" coords="1548,892,1655,919"/>
+<area shape="rect" href="$classWt_1_1Ext_1_1Dialog.html" title="A dialog emulates a modal window that blocks the user&#45;interface." alt="" coords="1776,791,1888,817"/>
+<area shape="rect" href="$classWt_1_1Ext_1_1TableView.html" title="A widget that displays data in a table." alt="" coords="1765,841,1899,868"/>
+<area shape="rect" href="$classWt_1_1Ext_1_1TabWidget.html" title="A widget that organizes contents in tab panes." alt="" coords="1764,892,1900,919"/>
+<area shape="rect" href="$classWt_1_1Ext_1_1MessageBox.html" title="A standard dialog for confirmation or to get simple user input." alt="" coords="1957,791,2112,817"/>
+<area shape="rect" href="$classWt_1_1Ext_1_1ProgressDialog.html" title="A standard dialog to inform the user of progress during a time consuming task." alt="" coords="2161,791,2329,817"/>
+<area shape="rect" href="$classWt_1_1Ext_1_1AbstractToggleButton.html" title="Abstract base class for radio button and check box." alt="" coords="1496,1095,1707,1121"/>
+<area shape="rect" href="$classWt_1_1Ext_1_1LineEdit.html" title="A line edit." alt="" coords="1540,968,1663,995"/>
+<area shape="rect" href="$classWt_1_1Ext_1_1TextEdit.html" title="A rich&#45;text editor." alt="" coords="1540,1019,1663,1045"/>
+<area shape="rect" href="$classWt_1_1Ext_1_1CheckBox.html" title="A user control that represents a check box." alt="" coords="1764,1145,1900,1172"/>
+<area shape="rect" href="$classWt_1_1Ext_1_1RadioButton.html" title="A user control that represents a radio button." alt="" coords="1756,1095,1908,1121"/>
+<area shape="rect" href="$classWt_1_1Ext_1_1ComboBox.html" title="A widget that provides a drop&#45;down combo&#45;box control." alt="" coords="1760,943,1904,969"/>
+<area shape="rect" href="$classWt_1_1Ext_1_1DateField.html" title="A form field for conveniently editing a date using a calendar popup." alt="" coords="1767,993,1897,1020"/>
+<area shape="rect" href="$classWt_1_1Ext_1_1NumberField.html" title="A form field for editing a number." alt="" coords="1756,1044,1908,1071"/>
+<area shape="rect" href="$classWt_1_1Ext_1_1PagingToolBar.html" title="A tool bar that provides paging controls for supporting large data sets in a table view..." alt="" coords="1263,1019,1423,1045"/>
+<area shape="rect" href="$classWt_1_1WContainerWidget.html" title="A widget that holds and manages child widgets." alt="" coords="985,385,1145,412"/>
+<area shape="rect" href="$classWt_1_1WFormWidget.html" title="An abstract widget that corresponds to an HTML form element." alt="" coords="1000,588,1131,615"/>
+<area shape="rect" href="$classWt_1_1WGLWidget.html" title="WebGL support class." alt="" coords="1008,639,1123,665"/>
+<area shape="rect" href="$classWt_1_1WHTML5Media.html" title="Abstract baseclass for HTML5 media elements." alt="" coords="997,31,1133,57"/>
+<area shape="rect" href="$classWt_1_1WImage.html" title="A widget that displays an image." alt="" coords="1017,81,1113,108"/>
+<area shape="rect" href="$classWt_1_1WLabel.html" title="A label for a form field." alt="" coords="1020,132,1111,159"/>
+<area shape="rect" href="$classWt_1_1WPaintedWidget.html" title="A widget that is painted using vector graphics." alt="" coords="992,183,1139,209"/>
+<area shape="rect" href="$classWt_1_1WProgressBar.html" title="A progress bar." alt="" coords="999,233,1132,260"/>
+<area shape="rect" href="$classWt_1_1WTable.html" title="A container widget which provides layout of children in a table grid." alt="" coords="1021,284,1109,311"/>
+<area shape="rect" href="$classWt_1_1WTemplate.html" title="A widget that renders an XHTML template." alt="" coords="1008,335,1123,361"/>
+<area shape="rect" href="$classWt_1_1WText.html" title="A widget that renders (XHTML) text." alt="" coords="1025,487,1105,513"/>
+<area shape="rect" href="$classWt_1_1Ext_1_1Splitter.html" title="A container widget with resize handles between its children." alt="" coords="1283,284,1403,311"/>
+<area shape="rect" href="$classWt_1_1WAnchor.html" title="A widget that represents an HTML anchor (to link to other documents)." alt="" coords="1293,335,1392,361"/>
+<area shape="rect" href="$classWt_1_1WGroupBox.html" title="A widget which group widgets into a frame with a title." alt="" coords="1283,385,1403,412"/>
+<area shape="rect" href="$classWt_1_1WStackedWidget.html" title="A container widget that stacks its widgets on top of each other." alt="" coords="1267,183,1419,209"/>
+<area shape="rect" href="$classWt_1_1WTableCell.html" title="A container widget that represents a cell in a table." alt="" coords="1287,233,1399,260"/>
+<area shape="rect" href="$classWt_1_1WAbstractToggleButton.html" title="An abstract base class for radio buttons and check boxes." alt="" coords="1247,639,1439,665"/>
+<area shape="rect" href="$classWt_1_1WComboBox.html" title="A widget that provides a drop&#45;down combo&#45;box control." alt="" coords="1280,689,1405,716"/>
+<area shape="rect" href="$classWt_1_1WLineEdit.html" title="A widget that provides a single line edit." alt="" coords="1289,740,1396,767"/>
+<area shape="rect" href="$classWt_1_1WPushButton.html" title="A widget that represents a push button." alt="" coords="1277,537,1408,564"/>
+<area shape="rect" href="$classWt_1_1WTextArea.html" title="A widget that provides a multi&#45;line edit." alt="" coords="1287,588,1399,615"/>
+<area shape="rect" href="$classWt_1_1WCheckBox.html" title="A user control that represents a check box." alt="" coords="1541,588,1661,615"/>
+<area shape="rect" href="$classWt_1_1WRadioButton.html" title="A user control that represents a radio button." alt="" coords="1535,639,1668,665"/>
+<area shape="rect" href="$classWt_1_1WSelectionBox.html" title="A selection box allows selection from a list of options." alt="" coords="1532,689,1671,716"/>
+<area shape="rect" href="$classWt_1_1WSpinBox.html" title="A spin box." alt="" coords="1548,740,1655,767"/>
+<area shape="rect" href="$classWt_1_1WTextEdit.html" title="A rich&#45;text XHTML editor." alt="" coords="1549,537,1653,564"/>
+<area shape="rect" href="$classWt_1_1WHTML5Audio.html" title="A widget that plays audio using the HTML5 audio element." alt="" coords="1275,5,1411,32"/>
+<area shape="rect" href="$classWt_1_1WHTML5Video.html" title="A widget that renders video using the HTML5 video element." alt="" coords="1275,56,1411,83"/>
+<area shape="rect" href="$classWt_1_1Chart_1_1WAbstractChart.html" title="Abstract base class for MVC&#45;based charts." alt="" coords="1249,132,1436,159"/>
+<area shape="rect" href="$classWt_1_1Chart_1_1WCartesianChart.html" title="A cartesian chart." alt="" coords="1504,157,1699,184"/>
+<area shape="rect" href="$classWt_1_1Chart_1_1WPieChart.html" title="A pie chart." alt="" coords="1525,107,1677,133"/>
+<area shape="rect" href="$classWt_1_1WStaticModelView.html" title="A widget that implements a view for a non&#45;changing model." alt="" coords="941,689,1189,716"/>
+<area shape="rect" href="$classWt_1_1WPaintDevice.html" title="The abstract base class for a paint device." alt="" coords="5,2652,136,2679"/>
+<area shape="rect" href="$classWt_1_1WVectorImage.html" title="An abstract paint device for rendering using native vector graphics." alt="" coords="219,2728,355,2755"/>
+<area shape="rect" href="$classWt_1_1WVmlImage.html" title="A paint device for rendering using the VML pseudo&#45;standard." alt="" coords="469,2728,589,2755"/>
+</map>

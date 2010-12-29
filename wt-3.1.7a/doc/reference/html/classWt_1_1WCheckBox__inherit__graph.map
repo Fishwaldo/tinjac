@@ -1,0 +1,8 @@
+<map id="G" name="G">
+<area shape="rect" href="$classWt_1_1WAbstractToggleButton.html" title="An abstract base class for radio buttons and check boxes." alt="" coords="5,393,197,420"/>
+<area shape="rect" href="$classWt_1_1WFormWidget.html" title="An abstract widget that corresponds to an HTML form element." alt="" coords="36,316,167,343"/>
+<area shape="rect" href="$classWt_1_1WInteractWidget.html" title="An abstract widget that can receive user&#45;interface interaction." alt="" coords="28,239,175,265"/>
+<area shape="rect" href="$classWt_1_1WWebWidget.html" title="A base class for widgets with an HTML counterpart." alt="" coords="39,161,164,188"/>
+<area shape="rect" href="$classWt_1_1WWidget.html" title="The abstract base class for a user&#45;interface component." alt="" coords="52,84,151,111"/>
+<area shape="rect" href="$classWt_1_1WObject.html" title="A base class for objects that participate in the signal/slot system." alt="" coords="53,7,149,33"/>
+</map>

@@ -1,0 +1,7 @@
+<map id="G" name="G">
+<area shape="rect" href="$classWt_1_1WHBoxLayout.html" title="A layout manager which arranges widgets horizontally." alt="" coords="5,239,139,265"/>
+<area shape="rect" href="$classWt_1_1WVBoxLayout.html" title="A layout manager which arranges widgets vertically." alt="" coords="163,239,293,265"/>
+<area shape="rect" href="$classWt_1_1WLayout.html" title="An abstract base class for layout managers." alt="" coords="100,84,199,111"/>
+<area shape="rect" href="$classWt_1_1WLayoutItem.html" title="An abstract base class for items that can participate in a layout." alt="" coords="17,7,145,33"/>
+<area shape="rect" href="$classWt_1_1WObject.html" title="A base class for objects that participate in the signal/slot system." alt="" coords="169,7,265,33"/>
+</map>

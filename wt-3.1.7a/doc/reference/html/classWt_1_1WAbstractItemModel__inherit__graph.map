@@ -1,0 +1,12 @@
+<map id="G" name="G">
+<area shape="rect" href="$classWt_1_1WAbstractListModel.html" title="An abstract list model for use with Wt&#39;s view classes." alt="" coords="384,31,552,57"/>
+<area shape="rect" href="$classWt_1_1WAbstractProxyModel.html" title="An abstract proxy model for Wt&#39;s item models." alt="" coords="377,107,559,133"/>
+<area shape="rect" href="$classWt_1_1WAbstractTableModel.html" title="An abstract table model for use with Wt&#39;s view classes." alt="" coords="379,157,557,184"/>
+<area shape="rect" href="$classWt_1_1WStandardItemModel.html" title="A standard data model, which stores its data in memory." alt="" coords="377,208,559,235"/>
+<area shape="rect" href="$classWt_1_1WObject.html" title="A base class for objects that participate in the signal/slot system." alt="" coords="7,132,103,159"/>
+<area shape="rect" href="$classWt_1_1WStringListModel.html" title="An model that manages a list of strings." alt="" coords="643,5,797,32"/>
+<area shape="rect" href="$classWt_1_1WAggregateProxyModel.html" title="A proxy model for Wt&#39;s item models that provides column aggregation." alt="" coords="623,56,817,83"/>
+<area shape="rect" href="$classWt_1_1WBatchEditProxyModel.html" title="A proxy model for Wt&#39;s item models that provides batch editing." alt="" coords="625,107,815,133"/>
+<area shape="rect" href="$classWt_1_1WSortFilterProxyModel.html" title="A proxy model for Wt&#39;s item models that provides filtering and/or sorting." alt="" coords="627,157,813,184"/>
+<area shape="rect" href="$classWt_1_1Dbo_1_1QueryModel.html" title="A Wt MVC Model to view/edit query results." alt="" coords="608,208,832,235"/>
+</map>

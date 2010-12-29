@@ -1,0 +1,6 @@
+<map id="G" name="G">
+<area shape="rect" href="$classWt_1_1WDialog.html" title="A WDialog shows a dialog." alt="" coords="41,239,137,265"/>
+<area shape="rect" href="$classWt_1_1WCompositeWidget.html" title="A widget that hides the implementation of composite widgets." alt="" coords="5,161,173,188"/>
+<area shape="rect" href="$classWt_1_1WWidget.html" title="The abstract base class for a user&#45;interface component." alt="" coords="40,84,139,111"/>
+<area shape="rect" href="$classWt_1_1WObject.html" title="A base class for objects that participate in the signal/slot system." alt="" coords="41,7,137,33"/>
+</map>

@@ -1,0 +1,6 @@
+<map id="G" name="G">
+<area shape="rect" href="$classWt_1_1WCircleArea.html" title="A interactive area in a widget, specified by a circle." alt="" coords="5,161,125,188"/>
+<area shape="rect" href="$classWt_1_1WPolygonArea.html" title="An interactive area in a widget, specified by a polygon." alt="" coords="149,161,285,188"/>
+<area shape="rect" href="$classWt_1_1WRectArea.html" title="A interactive area in a widget, specified by a rectangle." alt="" coords="309,161,421,188"/>
+<area shape="rect" href="$classWt_1_1WObject.html" title="A base class for objects that participate in the signal/slot system." alt="" coords="169,7,265,33"/>
+</map>

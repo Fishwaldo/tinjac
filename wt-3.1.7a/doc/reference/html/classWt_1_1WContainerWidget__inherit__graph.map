@@ -1,0 +1,12 @@
+<map id="G" name="G">
+<area shape="rect" href="$classWt_1_1Ext_1_1Splitter.html" title="A container widget with resize handles between its children." alt="" coords="928,5,1048,32"/>
+<area shape="rect" href="$classWt_1_1WAnchor.html" title="A widget that represents an HTML anchor (to link to other documents)." alt="" coords="939,56,1037,83"/>
+<area shape="rect" href="$classWt_1_1WGroupBox.html" title="A widget which group widgets into a frame with a title." alt="" coords="928,107,1048,133"/>
+<area shape="rect" href="$classWt_1_1WOverlayLoadingIndicator.html" title="A more obvious loading indicator that grays the window." alt="" coords="884,157,1092,184"/>
+<area shape="rect" href="$classWt_1_1WStackedWidget.html" title="A container widget that stacks its widgets on top of each other." alt="" coords="912,208,1064,235"/>
+<area shape="rect" href="$classWt_1_1WTableCell.html" title="A container widget that represents a cell in a table." alt="" coords="932,259,1044,285"/>
+<area shape="rect" href="$classWt_1_1WInteractWidget.html" title="An abstract widget that can receive user&#45;interface interaction." alt="" coords="476,132,623,159"/>
+<area shape="rect" href="$classWt_1_1WWebWidget.html" title="A base class for widgets with an HTML counterpart." alt="" coords="301,132,427,159"/>
+<area shape="rect" href="$classWt_1_1WWidget.html" title="The abstract base class for a user&#45;interface component." alt="" coords="153,132,252,159"/>
+<area shape="rect" href="$classWt_1_1WObject.html" title="A base class for objects that participate in the signal/slot system." alt="" coords="7,132,103,159"/>
+</map>

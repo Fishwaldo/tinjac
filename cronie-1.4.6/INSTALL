@@ -1,0 +1,22 @@
+Basic Installation
+==================
+
+In the vixie-cron directory run:
+autoreconf
+These commands create from configure.ac executable ./configure
+
+Then you can start installation:
+make
+make install
+
+The executable files will be installed in /usr/local/*
+
+Options
+=======
+In the default package are used configure options:
+--with-pam
+--with-selinux
+--with-audit
+
+
+

@@ -1,0 +1,4 @@
+<map id="G" name="G">
+<area shape="rect" href="$classWt_1_1WCombinedLocalizedStrings.html" title="A localized string resolver that bundles multiple string resolvers." alt="" coords="5,84,229,111"/>
+<area shape="rect" href="$classWt_1_1WMessageResourceBundle.html" title="Support for localized strings using XML files." alt="" coords="253,84,469,111"/>
+</map>

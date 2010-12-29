@@ -1,0 +1,1344 @@
+2010-10-21  Martin Prpič <mprpic@redhat.com>
+
+	* man/anacron.8, man/anacrontab.5, man/cron.8, man/crontab.1,
+	man/crontab.5: Rewrite of man pages & correction.  Signed-off-by: Marcela Mašláňová <mmaslano@redhat.com>
+
+2010-10-21  Marcela Mašláňová <mmaslano@redhat.com>
+
+	* man/bitstring.3: Remove useless man page.  Thanks to Colin Dean.
+
+2010-10-21  Marcela Mašláňová <mmaslano@redhat.com>
+
+	* src/cron.c: Apply previous patch correctly.
+
+2010-10-20  Colin Dean <c.c.dean@durham.ac.uk>
+
+	* src/cron.c: Check clustering before un/watch function Signed-off-by: Marcela Mašláňová <mmaslano@redhat.com>
+
+2010-10-13  Marcela Mašláňová <mmaslano@redhat.com>
+
+	* : commit 2d3a872e9c66d9550a5b3cc97fa78ff9d7708cce Author: Marcela
+	Mašláňová <mmaslano@redhat.com> Date:   Fri Oct 8 12:17:15 2010
+	+0200
+
+2010-10-07  Marcela Mašláňová <mmaslano@redhat.com>
+
+	* man/cron.8: man page typo: change to correct option
+
+2010-10-06  Marcela Mašláňová <mmaslano@redhat.com>
+
+	* src/database.c: Remove cluster support from inotify_database check_inotify_database is called only when inotify is on, which is
+	not with cluster support.
+
+2010-10-06  Colin Dean <c.c.dean@durham.ac.uk>
+
+	* man/crontab.1, src/crontab.c: The crontab command uses "-c" and
+	"-n" instead of "-h".  Signed-off-by: Marcela Mašláňová <mmaslano@redhat.com>
+
+2010-10-04  Marcela Mašláňová <mmaslano@redhat.com>
+
+	* src/crontab.c: Correct ifdef HAVE_FCHOWN Based on https://fedorahosted.org/cronie/ticket/7 Thanks to
+	crrodriguez
+
+2010-10-04  Marcela Mašláňová <mmaslano@redhat.com>
+
+	* .gitignore, src/database.c: is_local set to zero
+
+2010-10-04  Colin Dean <c.c.dean@durham.ac.uk>
+
+	* man/cron.8, man/crontab.1, src/Makefile.am, src/cron.c,
+	src/crontab.c, src/database.c, src/globals.h: cronie on cluster On issue we have is that although we've made our services very
+	resilient, by employing HA failover, load balancing and round robin
+	DNS, the one service that's difficult to do anything with is cron,
+	because it has traditionally been tied to a single machine.  For instance, we have a cluster of 4 Fedora servers which our end
+	users use as timeshare systems, using round robin DNS, and if one of
+	the servers is down it doesn't really matter too much. We don't even
+	backup the servers, relying on NFS home directories and rebuilding
+	from scratch using kickstart + cfengine if a server fails and can't
+	be restarted.  However, the users have scattered crontab files around the 4
+	servers, so that if the particular server a cron job is meant to run
+	on dies, the job doesn't run any more, and the crontab file may be
+	permanently lost.  What we needed was a facility to allow crontabs in /var/spool/cron
+	on these 4 servers be NFS mounted from a single directory on our
+	NetApp filers (so giving us backups and snapshots), with any user
+	able to run "crontab -e" from any of the servers to manage a single
+	shared crontab, and for us in the IT Service to be able to set just
+	one of the 4 servers to run user crontab jobs at any time. However,
+	we needed to keep /etc/crontab and the files in /etc/cron.d/
+	specific to each individual server still, and keep crond running on
+	all 4 servers.  Signed-off-by: Marcela Mašláňová <mmaslano@redhat.com>
+
+2010-08-30  Marcela Mašláňová <mmaslano@redhat.com>
+
+	* anacron/runjob.c: Typo in log message Based on Tom London report
+	https://bugzilla.redhat.com/show_bug.cgi?id=626947
+
+2010-08-23  Marcela Mašláňová <mmaslano@redhat.com>
+
+	* anacron/main.c: Close leaking file descriptor anacron was leaking fd, which caused denial of jobs by selinux.
+
+2010-08-02  Marcela Mašláňová <mmaslano@redhat.com>
+
+	* ChangeLog, configure.ac: New minor release 1.4.5.
+
+2010-08-02  Marcela Mašláňová <mmaslano@redhat.com>
+
+	* cronie.init: OK value printed twice Fix based on 615107. There were too many OK's messages.
+
+2010-07-21  Marcela Mašláňová <mmaslano@redhat.com>
+
+	* src/cron.c: Help and usage fix Option -h was added. Also details about options were added into
+	usage.
+
+2010-07-21  Marcela Mašláňová <mmaslano@redhat.com>
+
+	* man/cron.8: man crond -i Document missing option.
+
+2010-07-12  Marcela Mašláňová <mmaslano@redhat.com>
+
+	* man/cron.8, src/cron.c: Syslog output will be used instead of mail If sendmail isn't installed, syslog is used. This patch should also
+	solve problem with RPM requirements of sendmail (and which mail
+	should be installed by default).  Based on: https://bugzilla.redhat.com/show_bug.cgi?id=472710#c42
+
+2010-04-14  Marcela Mašláňová <mmaslano@redhat.com>
+
+	* src/entry.c: Remove the whole unused part.
+
+2010-04-14  Marcela Mašláňová <mmaslano@redhat.com>
+
+	* src/entry.c: Remove 'dont log' part which probably never worked.
+
+2010-04-14  Marcela Mašláňová <mmaslano@redhat.com>
+
+	* src/do_command.c, src/entry.c: Beautify error outputs.
+
+2010-04-14  Michal Seben <mseben@suse.cz>
+
+	* man/crontab.5, src/entry.c: Option "-" don't log jobs as root If the uid of the owner is 0 (root), he can put a "-" as first
+	character of a crontab entry. This will prevent cron from writing a
+	syslog message about this command getting executed.  Signed-off-by: Marcela Mašláňová <mmaslano@redhat.com>
+
+2010-04-14  Michal Seben <mseben@suse.cz>
+
+	* src/security.c: Correctly reported PAM errors cron_conv could be helpfull for debug purposes, when something bad
+	happens with pam e.g. : expired user password - without cron_conv
+	cronie doesn't report usefull info in syslog messages  (it just
+	write no conversation function error to messages file),if you want
+	to do quick test of pam conversation function, you  could set
+	PASS_MAX_DAYS and PASS_WARN_AGE in etc/login.defs , add new user and
+	for this user create cron rule (crontab -e) Signed-off-by: Marcela Mašláňová <mmaslano@redhat.com>
+
+2010-03-25  Andrew Man-Hon Lau <amlau@alum.mit.edu>
+
+	* contrib/0anacron: 0anacron should check only readability.  Signed-off-by: Marcela Mašláňová <mmaslano@redhat.com>
+
+2010-03-23  Marcela Mašláňová <mmaslano@redhat.com>
+
+	* src/security.c: Revert previous change. The code which control the
+	input entry should be sufficient. Only "/" are removed from scripts.
+
+2010-03-22  Marcela Mašláňová <mmaslano@redhat.com>
+
+	* contrib/0hourly, contrib/dailyjobs, src/security.c: In system
+	tables was hardcoded home directory to "/". This was changed to
+	switching to "/" only when home for user isn't defined.  Based on rhbz#575419
+
+2010-02-23  Marcela Mašláňová <mmaslano@redhat.com>
+
+	* man/crontab.5: Definition of system crontables.
+
+2010-02-18  Marcela Mašláňová <mmaslano@redhat.com>
+
+	* ChangeLog, configure.ac: New release
+
+2010-02-17  Marcela Mašláňová <mmaslano@redhat.com>
+
+	* src/crontab.c: CVE-2010-0424 -- crontab -e crontab file timestamp
+	race condition When run as "crontab -e", crontab creates a temporary file in /tmp,
+	copies the contents of an existing crontab to this file, and then
+	calls utime() on the temporary file name to set its mtime and atime
+	to 0, in order to check after editing whether or not the file has
+	been modified.  Since the file is created with the user's euid, and
+	because utime is called on the file as root, an attacker can replace
+	the temporary file after it is created with a symlink to any file or
+	folder on disk, which will then have its atime and mtime set to 0.
+	This is certainly not a critical issue, but this action can be used
+	to deny service in many scenarios. For example, the cron daemon
+	checks the mtime of the crontab spool folder and its contents to
+	determine whether or not it needs to update its database of
+	cronjobs, and if these times are reset to 0, no new cronjobs will be
+	added. Other daemons relying on accurate timestamps may be similarly
+	affected. Finally, build tools such as make could be tricked into
+	not re-compiling source, based on an old timestamp.  Thanks to: Dan
+	Rosenberg
+
+2010-02-16  Marcela Mašláňová <mmaslano@redhat.com>
+
+	* configure.ac: Dynamic shared libraries -laudit There is need to add -laudit into gcc options because now it's not
+	found automatically. Based on:
+	http://fedoraproject.org/wiki/Features/ChangeInImplicitDSOLinking
+
+2010-02-12  Marcela Mašláňová <mmaslano@redhat.com>
+
+	* man/anacrontab.5: Make man page more readable based on #564206.
+
+2010-01-25  Marcela Mašláňová <mmaslano@redhat.com>
+
+	* crond.sysconfig, cronie.init: CRON_VALIDATE_MAILRCPTS was removed,
+	because it was not used anyway.
+
+2010-01-13  Marcela Mašláňová <mmaslano@redhat.com>
+
+	* src/do_command.c, src/funcs.h, src/security.c: With NFS homes
+	can't be job executed, because root can't access this directory.
+
+2010-01-05  Will Woods <wwoods@redhat.com>
+
+	* man/cron.8, src/do_command.c: Disable mailing output.  Signed-off-by: Marcela Mašláňová <mmaslano@redhat.com>
+
+2010-01-05  Will Woods <wwoods@redhat.com>
+
+	* man/cron.8, src/cron.c, src/do_command.c, src/globals.h: Output
+	could be redirectered to syslog.  Signed-off-by: Marcela Mašláňová <mmaslano@redhat.com>
+
+2009-12-21  Marcela Mašláňová <mmaslano@redhat.com>
+
+	* src/security.c: Cron doesn't use environment values from
+	/etc/security/pam_env.conf.  This was fixed by moving pam_setcred
+	into first part of authentication of pam.
+
+2009-11-27  Marcela Mašláňová <mmaslano@redhat.com>
+
+	* cronie.init: Initscript: if unprivileged user stop deamon, it
+	should return 4.
+
+2009-11-27  Marcela Mašláňová <mmaslano@redhat.com>
+
+	* cronie.init: Initscript: if unprivileged user restart deamon, it
+	should return 4.
+
+2009-11-05  Guido Trentalancia <guido@trentalancia.com>
+
+	* src/security.c: This function will be probably removed from
+	libselinux, so it is added into source code here.  Signed-off-by: Marcela Mašláňová <mmaslano@redhat.com>
+
+2009-11-05  Marcela Mašláňová <mmaslano@redhat.com>
+
+	* pam/crond: One line was missing in pam authentication. rhbz#533189
+
+2009-11-03  Marcela Mašláňová <mmaslano@redhat.com>
+
+	* Makefile.am, configure.ac: Autotools - Makefile includes
+	dailyjobs, configure has new version.
+
+2009-11-03  Marcela Mašláňová <mmaslano@redhat.com>
+
+	* ChangeLog: New release 1.4.3.
+
+2009-11-03  SATOH Fumiyasu <fumiyas@osstech.co.jp>
+
+	* src/misc.c: Fix "warning: unused variable" if LOG_FILE is not
+	defined Signed-off-by: Marcela Mašláňová <mmaslano@redhat.com>
+
+2009-11-03  SATOH Fumiyasu <fumiyas@osstech.co.jp>
+
+	* src/crontab.c: Portability: Use swap_uids() instead of setreuid()
+	directly Signed-off-by: Marcela Mašláňová <mmaslano@redhat.com>
+
+2009-11-03  SATOH Fumiyasu <fumiyas@osstech.co.jp>
+
+	* src/externs.h: Portability: Solaris and AIX support saved UID/GID Signed-off-by: Marcela Mašláňová <mmaslano@redhat.com>
+
+2009-11-03  SATOH Fumiyasu <fumiyas@osstech.co.jp>
+
+	* configure.ac, src/externs.h: Portability: Check if fchown() and
+	fchgrp() exist by configure.  Signed-off-by: Marcela Mašláňová <mmaslano@redhat.com>
+
+2009-11-03  SATOH Fumiyasu <fumiyas@osstech.co.jp>
+
+	* src/crontab.c: Security: Ignore $TMPDIR if ruid!=euid and/or
+	rgid!=egid A setuid/setgid process with GNU C library does NOT
+	inherit $TMPDIR from the parent process for security reason, but
+	this behavior is NOT standard feature.  Signed-off-by: Marcela Mašláňová <mmaslano@redhat.com>
+
+2009-11-03  SATOH Fumiyasu <fumiyas@osstech.co.jp>
+
+	* configure.ac: Portability: pam_misc.so is the Linux-PAM specific
+	library Signed-off-by: Marcela Mašláňová <mmaslano@redhat.com>
+
+2009-11-03  SATOH Fumiyasu <fumiyas@osstech.co.jp>
+
+	* configure.ac, src/externs.h: Portability: Check if sys/fcntl.h
+	exists or not Signed-off-by: Marcela Mašláňová <mmaslano@redhat.com>
+
+2009-11-03  Marcela Mašláňová <mmaslano@redhat.com>
+
+	* contrib/dailyjobs: Dailyjobs are here for users who don't like
+	anacron.  0hourly executes cron.hourly scripts and other will be
+	executed by dailyjobs.
+
+2009-10-19  HONDA Hirofumi <honda.hirofumi@oss.ntt.co.jp>
+
+	* cronie.init: When parent crond is stopped and child crond
+	(executing program) is running,"service crond status" reports "crond
+	(pid  XXX) is running...".  Signed-off-by: Marcela Mašláňová <mmaslano@redhat.com>
+
+2009-10-12  Marcela Mašláňová <mmaslano@redhat.com>
+
+	* ChangeLog, configure.ac: New release with few bugfixes.
+
+2009-09-25  Marcela Mašláňová <mmaslano@redhat.com>
+
+	* src/database.c: Symlinks were not followed. This is a limitation
+	of inotify API.  rhbz#477100
+
+2009-09-18  Tomas Mraz <t8m@centrum.cz>
+
+	* src/do_command.c: Do not segfault if mailto does not pass safe_p
+	test.
+
+2009-09-16  Tomas Mraz <t8m@centrum.cz>
+
+	* pam/crond: Use password-auth common PAM configuration.
+
+2009-08-17  Marcela Mašláňová <mmaslano@redhat.com>
+
+	* anacron/lock.c, anacron/readtab.c, man/anacrontab.5: Add daily,
+	weekly as a possibility of anacrontab configuration.
+
+2009-08-11  Marcela Mašláňová <mmaslano@redhat.com>
+
+	* contrib/anacrontab: Add anacrontab configuration file.
+
+2009-08-11  Marcela Mašláňová <mmaslano@redhat.com>
+
+	* man/anacron.8, man/anacrontab.5, man/cron.8, man/crontab.1,
+	man/regularly-jobs.5: Polish manual pages.
+
+2009-07-30  Marcela Mašláňová <mmaslano@redhat.com>
+
+	* Makefile.am, anacron/Makefile, configure.ac, man/Makefile.am,
+	man/anacron.8, man/anacrontab.5, man/cron.8, man/crontab.5: Revert
+	configuration file regularly-file back to anacrontab.
+
+2009-07-29  Marcela Mašláňová <mmaslano@redhat.com>
+
+	* ChangeLog, configure.ac: Start minor releases cronie-1.4.1.
+
+2009-07-29  Marcela Mašláňová <mmaslano@redhat.com>
+
+	* contrib/regularly-jobs: Revert configure file for anacrontab.
+
+2009-07-29  Rocco Iannacci <rocian AT gmail DOT com>
+
+	* anacron/readtab.c: Segfault on ppc64 was caused by parsing random
+	delay from anacrontab.  Signed-off-by: Marcela Mašláňová <mmaslano@redhat.com>
+
+2009-07-21  Marcela Mašláňová <mmaslano@redhat.com>
+
+	* configure.ac: New release cronie1.4.
+
+2009-07-20  Marcela Mašláňová <mmaslano@redhat.com>
+
+	* ChangeLog, Makefile.am, anacron/Makefile.am, man/Makefile.am,
+	man/anacron.8, man/anacrontab.5, man/cron.8, man/crontab.1,
+	man/crontab.5, man/regularly-jobs.5: New option: enable-anacron in
+	configure which can set compilation with or without anacron part.
+	Also there were changes in manual pages.  Updated ChangeLog.
+
+2009-07-17  Štěpán Kasal <kasal AT redhat DOT com>
+
+	* .gitignore, Makefile.am, anacron/Makefile.am, configure.ac: Fix of
+	autotools stuff for anacron.  Signed-off-by: Marcela Mašláňová <mmaslano@redhat.com>
+
+2009-07-16  Marcela Mašláňová <mmaslano@redhat.com>
+
+	* Makefile.am, anacron/Makefile.am, configure.ac, man/Makefile.am: 
+	Make anacron configurable. The option --enable-anacron in configure
+	can switch on/off compilation of this part of the package.
+
+2009-07-16  Marcela Mašláňová <mmaslano@redhat.com>
+
+	* anacron/Makefile.am: Put anacron binary into proper location.
+
+2009-07-16  Marcela Mašláňová <mmaslano@redhat.com>
+
+	* .gitignore, Makefile.am, anacron/anacron.8, anacron/anacrontab.5,
+	contrib/0anacron, contrib/0hourly, contrib/regularly-jobs,
+	man/Makefile.am, man/anacron.8, man/anacrontab.5, regularly-jobs: 
+	Add configuration scripts into contrib.  Cleaning/adding man pages
+	into Makefile/directories.
+
+2009-07-14  Marcela Mašláňová <mmaslano@redhat.com>
+
+	* COPYING.anacron, ChangeLog.anacron, README.anacron,
+	anacron/COPYING, anacron/ChangeLog, anacron/README, anacron/TODO,
+	anacron/anacron.apm, anacron/debian/0anacron.daily,
+	anacron/debian/0anacron.monthly, anacron/debian/0anacron.weekly,
+	anacron/debian/README.debian, anacron/debian/anacron.postinst,
+	anacron/debian/anacron.postrm, anacron/debian/anacrontab,
+	anacron/debian/apm.d, anacron/debian/changelog,
+	anacron/debian/compat, anacron/debian/control,
+	anacron/debian/copyright, anacron/debian/cron.d,
+	anacron/debian/dirs, anacron/debian/docs, anacron/debian/init.d,
+	anacron/debian/rules: Cleaning useless files.
+
+2009-07-14  Marcela Mašláňová <mmaslano@redhat.com>
+
+	* Makefile.am, anacron/Makefile, anacron/Makefile.am,
+	anacron/global.h, anacron/main.c, configure.ac, regularly-jobs: 
+	Anacron makefile was rewritten according to the rest of autotools
+	makefiles in this project.
+
+2009-07-13  Marcela Mašláňová <mmaslano@redhat.com>
+
+	* anacron/global.h, anacron/log.c, anacron/main.c,
+	anacron/readtab.c: New options: random delay could be set from
+	anacrontab instead of sysconfig file, range of hours when should be
+	jobs started.
+
+2009-07-13  Marcela Mašláňová <mmaslano@redhat.com>
+
+	* anacron/anacron.8, anacron/anacrontab.5: Update manual pages.
+
+2009-07-13  Marcela Mašláňová <mmaslano@redhat.com>
+
+	* anacron/readtab.c: Fix error message for wrong spooldir.
+
+2009-07-13  Marcela Mašláňová <mmaslano@redhat.com>
+
+	* anacron/global.h, anacron/gregor.c, anacron/log.c,
+	anacron/matchrx.c, anacron/runjob.c: Memory leaks should be fixed.
+	Instead of log is used slog function.
+
+2009-07-13  Marcela Mašláňová <mmaslano@redhat.com>
+
+	* anacron/global.h, anacron/runjob.c: The temporary file has file
+	descriptors for input and output instead of one descriptor.
+
+2009-07-13  Marcela Mašláňová <mmaslano@redhat.com>
+
+	* anacron/runjob.c: Mail langinfo was fixed.
+
+2009-07-13  Marcela Mašláňová <mmaslano@redhat.com>
+
+	* anacron/ChangeLog, anacron/README, anacron/TODO,
+	anacron/anacron.8, anacron/anacron.apm, anacron/anacrontab.5,
+	anacron/debian/0anacron.daily, anacron/debian/0anacron.monthly,
+	anacron/debian/0anacron.weekly, anacron/debian/README.debian,
+	anacron/debian/anacron.postinst, anacron/debian/anacron.postrm,
+	anacron/debian/anacrontab, anacron/debian/apm.d,
+	anacron/debian/changelog, anacron/debian/compat,
+	anacron/debian/control, anacron/debian/copyright,
+	anacron/debian/cron.d, anacron/debian/dirs, anacron/debian/docs,
+	anacron/debian/init.d, anacron/debian/rules, anacron/global.h,
+	anacron/gregor.c, anacron/gregor.h, anacron/lock.c, anacron/log.c,
+	anacron/main.c, anacron/readtab.c, anacron/runjob.c: Minor debian
+	release anacron-2.3.1 which adds this features: -anacron runs jobs
+	twice in a 31 day month -add hostname to emails sent to admin -allow
+	user anacrontabs and some debian scripts for apm support.
+
+2009-07-13  Marcela Mašláňová <mmaslano@redhat.com>
+
+	* anacron/COPYING, anacron/ChangeLog, anacron/Makefile,
+	anacron/README, anacron/TODO, anacron/anacron.8,
+	anacron/anacrontab.5, anacron/global.h, anacron/gregor.c,
+	anacron/gregor.h, anacron/lock.c, anacron/log.c, anacron/main.c,
+	anacron/matchrx.c, anacron/matchrx.h, anacron/readtab.c,
+	anacron/runjob.c: Initial upload of anacron-2.3 which should be
+	optimized for better cooperation with cronie. However, cronie should
+	be working with or without anacron, which should be configurable.
+
+2009-06-19  Tomas Mraz <t8m@centrum.cz>
+
+	* src/cron.c: Fix the disable inotify functionality.
+
+2009-06-19  Marcela Mašláňová <mmaslano@redhat.com>
+
+	* src/cron.c: Option -i for disabling inotify support.  This option
+	was based on email by user who can't set up daemon when they have
+	mounted from NFS /var/spool/cron for a number of identical machines.
+	Inotify pass the test because it find the directory, but didn't
+	notice changes.
+	http://linux-nfs.org/pipermail/nfsv4/2007-November/007127.html
+	Thanks to: Alex Bame
+
+2009-06-05  Marcela Mašláňová <mmaslano@redhat.com>
+
+	* src/cron.c, src/do_command.c, src/globals.h: ValidateMailRcpts
+	removed for problems when could be enviromental settings exported
+	under wrong user.
+
+2009-05-29  Marcela Mašláňová <mmaslano@redhat.com>
+
+	* src/.indent.pro, src/cron.c, src/crontab.c, src/database.c,
+	src/do_command.c, src/entry.c, src/env.c, src/job.c, src/misc.c,
+	src/popen.c, src/security.c, src/user.c: Beautify the code with
+	indent.  Thanks for .indent.pro to Martin Klozik.
+
+2009-05-29  Marcela Mašláňová <mmaslano@redhat.com>
+
+	* configure.ac, src/Makefile.am, src/misc.c: CRON_DIR became
+	obsolete. SPOOL_DIR is enough for work with user crontables.
+
+2009-05-22  Marcela Mašláňová <mmaslano@redhat.com>
+
+	* : commit b96c9b94317b31c6bb7e1335a4c7ba7a7dca7e4a Author:
+	Štěpán Kasal <kasal AT redhat DOT com> Date:   Fri May 22
+	09:05:10 2009 +0200
+
+2009-05-22  Štěpán Kasal <kasal AT redhat DOT com>
+
+	* src/cron.c, src/database.c, src/pathnames.h: Rename RH_CRON_DIR to
+	SYS_CRON_DIR.
+
+2009-05-22  Štěpán Kasal <kasal AT redhat DOT com>
+
+	* configure.ac: Drop uselles part of configure.
+
+2009-05-22  Marcela Mašláňová <mmaslano@redhat.com>
+
+	* man/cron.8, src/funcs.h, src/security.c: Remove unused function
+	cron_get_job_context.
+
+2009-05-20  Marcela Mašláňová <mmaslano@redhat.com>
+
+	* src/do_command.c, src/funcs.h, src/security.c: PAM logging was
+	incorrect bz#249870.  The jobs is setuid to user before exec. Mail
+	runs under root permissions.
+
+2009-05-14  Vlad Glagolev <stealth at sourcemage.org>
+
+	* src/cron.c: @reboot alias check the return value.  Signed-off-by: Marcela Mašláňová <mmaslano@redhat.com>
+
+2009-05-14  Marcela Mašláňová <mmaslano@redhat.com>
+
+	* src/do_command.c: Save delimiters need more characters f.e. '_'.
+	Fix based on: http://bugs.gentoo.org/show_bug.cgi?id=197625
+
+2009-05-13  Marcela Mašláňová <mmaslano@redhat.com>
+
+	* configure.ac, man/crontab.5, src/do_command.c: MAILFROM, if set,
+	will be used as the envelope sender address when cron mails the
+	output of commands in that crontab.  The initial patch was written
+	by: Heath Caldwell
+
+2009-04-28  Marcela Mašláňová <mmaslano@redhat.com>
+
+	* src/globals.h: No need to initialize globals, which are set by
+	default to zero.
+
+2009-04-28  Stěpán Kasal <kasal AT redhat DOT com>
+
+	* configure.ac: Fix with(out)-pam in configure.  Signed-off-by: Marcela Mašláňová <mmaslano@redhat.com>
+
+2009-04-27  Marcela Mašláňová <mmaslano@redhat.com>
+
+	* ChangeLog, configure.ac: Update ChangeLog for new release.
+
+2009-04-23  Marcela Mašláňová <mmaslano@redhat.com>
+
+	* src/cron.c: Inotify initialization left open file descriptors
+	which are leaking and annoying SElinux.  This could be once fixed by
+	inotify_init1, but that's supported from kernel 2.6.27.
+
+2009-04-15  Willy Tarreua <wtarreau AT exosec DOT fr>
+
+	* src/cron.c, src/crontab.c, src/globals.h: I have noticed that with
+	cronie-1.2, my binaries have seen their \ size grow by 10x (from
+	28kB to 290kB). After searching a bit, I found that the responsible
+	was the INIT() macro in globals.h \ which initializes huge strings
+	MailCmd and cron_default_mail_charset both of which are 128 kB. Due
+	to this initialization, the memory \ areas are stored for real in
+	the binary, resulting in larger sizes Signed-off-by: Marcela Mašláňová <mmaslano@redhat.com>
+
+2009-02-12  Marcela Mašláňová <mmaslano@redhat.com>
+
+	* configure.ac: Cronie could be build as Position Independent
+	Executable when the configure is executed with --enable-pie.  Erased
+	commented unused stuff from configure.
+
+2009-02-12  Marcela Mašláňová <mmaslano@redhat.com>
+
+	* crond.sysconfig: Fix typo in sysconfig.
+
+2008-12-23  Marcela Mašláňová <mmaslano@redhat.com>
+
+	* ChangeLog: After long time update ChangeLog file.
+
+2008-12-23  Tomas Mraz <t8m@centrum.cz>
+
+	* man/cron.8, man/crontab.5: Update man pages to reflect the
+	reality.
+
+2008-12-22  Tomas Mraz <t8m@centrum.cz>
+
+	* src/cron.c, src/database.c, src/funcs.h, src/structs.h: Fix
+	handling of HUP signal with inotify enabled.
+
+2008-12-02  Marcela Mašláňová <mmaslano@redhat.com>
+
+	* configure.ac: Configure can't be run without pam-devel libraries.
+	(rhbz#473893)
+
+2008-10-24  Marcela Mašláňová <mmaslano@redhat.com>
+
+	* cronie.init: Init script is according to SysVInitScript
+	guidelines.
+
+2008-08-11  Marcela Mašláňová <mmaslano@redhat.com>
+
+	* src/cron.c: Check user before job is run.
+
+2008-07-28  Marcela Mašláňová <mmaslano@redhat.com>
+
+	* src/pathnames.h: Clean hardwired pathnames.
+
+2008-07-28  Marcela Mašláňová <mmaslano@redhat.com>
+
+	* man/crontab.5, src/cron.c, src/pathnames.h: @reboot jobs should be
+	run only after reboot instead of every daemon's restart.  Patch
+	inspired by debian.
+
+2008-06-26  Marcela Mašláňová <mmaslano@redhat.com>
+
+	* ChangeLog, configure.ac: Release 1.2
+
+2008-06-26  Marcela Mašláňová <mmaslano@redhat.com>
+
+	* man/cron.8, man/crontab.1: Updated manuals - diffent typos and
+	inotify support mentioned.
+
+2008-06-26  SATOH Fumiyasu <fumiyas@osstech.co.jp>
+
+	* configure.ac, src/misc.c: Portability: File locking by fcntl,
+	lockf or flock Signed-off-by: Marcela Mašláňová <mmaslano@redhat.com>
+
+2008-06-26  SATOH Fumiyasu <fumiyas@osstech.co.jp>
+
+	* src/macros.h, src/misc.c: Bugfix: PATH_MAX is defined in limits.h Signed-off-by: Marcela Mašláňová <mmaslano@redhat.com>
+
+2008-06-26  SATOH Fumiyasu <fumiyas@osstech.co.jp>
+
+	* configure.ac, src/popen.c: Portability: Check if sys/cdefs.h is
+	there on the platform Signed-off-by: Marcela Mašláňová <mmaslano@redhat.com>
+
+2008-06-23  SATOH Fumiyasu <fumiyas@osstech.co.jp>
+
+	* configure.ac, src/funcs.h, src/macros.h, src/misc.c: Portability:
+	Check for struct tm.tm_gmtoff by AC_CHECK_MEMBERS Signed-off-by: Marcela Mašláňová <mmaslano@redhat.com>
+
+2008-06-26  SATOH Fumiyasu <fumiyas@osstech.co.jp>
+
+	* src/funcs.h: Bugfix: Correct log_it() prototype Signed-off-by: Marcela Mašláňová <mmaslano@redhat.com>
+
+2008-06-26  Marcela Mašláňová <mmaslano@redhat.com>
+
+	* src/database.c: Add missing endif.
+
+2008-06-23  Tomas Mraz <t8m@centrum.cz>
+
+	* src/cron.c, src/database.c: Fix the inotify support.
+
+2008-06-23  Tomas Mraz <t8m@centrum.cz>
+
+	* src/crontab.c, src/database.c, src/do_command.c, src/entry.c,
+	src/env.c, src/job.c, src/misc.c, src/popen.c, src/pw_dup.c,
+	src/user.c: Remove rcsid tags.
+
+2008-06-23  Tomas Mraz <t8m@centrum.cz>
+
+	* src/cron.h, src/security.c: Move macros and static declarations
+	where they are needed.
+
+2008-06-23  Tomas Mraz <t8m@centrum.cz>
+
+	* configure.ac: Add check for _GNU_SOURCE.
+
+2008-06-23  Tomas Mraz <t8m@centrum.cz>
+
+	* src/cron.c: Fix wrong declaration of orig_tz.
+
+2008-06-23  Tomas Mraz <t8m@centrum.cz>
+
+	* src/cron.c, src/crontab.c, src/database.c, src/do_command.c,
+	src/entry.c, src/funcs.h, src/misc.c, src/popen.c, src/security.c,
+	src/user.c: Unification of logging (syslog->log_it).
+
+2008-06-23  Tomas Mraz <t8m@centrum.cz>
+
+	* src/security.c: Fixed call to setkeycreatecon.
+
+2008-05-30  Marcela Mašláňová <mmaslano@redhat.com>
+
+	* configure.ac: Update version also in configure.
+
+2008-05-30  Marcela Mašláňová <mmaslano@redhat.com>
+
+	* ChangeLog: cronie-1.1 released.  Updated Changelog.
+
+2008-05-30  Marcela Mašláňová <mmaslano@redhat.com>
+
+	* cronie.init: Init script die faster, if the sysconfig script is
+	missing.  Patch from scop.
+
+2008-05-29  Marcela Mašláňová <mmaslano@redhat.com>
+
+	* src/database.c: Function instead of macro. Code cleaning.
+
+2008-05-27  Marcela <marca@caladan.englab.brq.redhat.com>
+
+	* man/crontab.1: Man: crontab.1 TMP directory could be set in
+	eviroment instead of /tmp.
+
+2008-05-27  Marcela <marca@caladan.englab.brq.redhat.com>
+
+	* src/security.c: Keyring will be created after restart of computer
+	and services won't be dying on selinux denial. The reason for this
+	change was pam-devels update.
+
+2008-05-27  Marcela <marca@caladan.englab.brq.redhat.com>
+
+	* src/funcs.h, src/security.c: Remove unused function.
+
+2008-05-27  Marcela <marca@caladan.englab.brq.redhat.com>
+
+	* src/cron.c, src/database.c: Permission of crontabs are checked in
+	case we AREN'T using -p option.
+
+2008-03-14  Marcela Mašláňová <mmaslano@redhat.com>
+
+	* src/cron.c: Better testing, when we are closing watches.
+
+2008-03-14  Marcela Mašláňová <mmaslano@redhat.com>
+
+	* configure.ac, src/cron.c, src/cron.h, src/crontab.c,
+	src/database.c, src/externs.h, src/funcs.h, src/structs.h: Rewrited
+	inotify support.
+
+2008-01-31  Marcela Mašláňová <mmaslano@redhat.com>
+
+	* src/security.c, src/user.c: Using get_default_context() for name =
+	NULL instead of getseuserbyname because files created in
+	/var/spool/cron hadn't wrong context.  rhbz#426704
+
+2008-01-31  Marcela Mašláňová <mmaslano@redhat.com>
+
+	* .gitignore, Makefile.am, crond.pam, man/bitstring.3, man/cron.8,
+	man/crontab.1, man/crontab.5, pam/crond: Stepan Kasal: create pam's
+	own directory for pam configure.  Create correct man pages in man
+	directory.  Add .gitignore file.
+
+2008-01-30  Marcela Mašláňová <mmaslano@redhat.com>
+
+	* Makefile.am, config.h, config.h.in, configure.ac,
+	man/Makefile.am, man/bitstring.3.in, man/cron.8.in, man/crond.8.in,
+	man/crontab.1.in, man/crontab.5.in, src/.deps/cron.Po,
+	src/.deps/crontab.Po, src/.deps/database.Po, src/.deps/debug.Po,
+	src/.deps/do_command.Po, src/.deps/entry.Po, src/.deps/env.Po,
+	src/.deps/job.Po, src/.deps/misc.Po, src/.deps/popen.Po,
+	src/.deps/pw_dup.Po, src/.deps/security.Po, src/.deps/user.Po,
+	src/Makefile.am, src/cron.c, src/crontab.c, src/database.c,
+	src/do_command.c, src/entry.c, src/env.c, src/job.c, src/misc.c,
+	src/popen.c, src/pw_dup.c, src/security.c, src/user.c, stamp-h1: 
+	Added patch from Stepan Kasal, which fixed all autotools issues.
+	Also the pam's configure file is now installed directly into correct
+	path, if it's configure runned with pam.
+
+2008-01-17  Marcela Mašláňová <mmaslano@redhat.com>
+
+	* CHANGES, COPYING, ChangeLog, INSTALL, LICENSE, Makefile,
+	Makefile.am, Makefile.in, NEWS, README, aclocal.m4,
+	autom4te.cache/output.0, autom4te.cache/output.1,
+	autom4te.cache/requests, autom4te.cache/traces.0,
+	autom4te.cache/traces.1, config.guess, config.h, config.log,
+	config.status, config.sub, configure, configure.ac, cronie.init,
+	depcomp, install-sh, man/Makefile, man/Makefile.am,
+	man/Makefile.in, man/bitstring.3, man/cron.8, man/crond.8,
+	man/crontab.1, man/crontab.5, missing, src/Makefile,
+	src/Makefile.am, src/Makefile.in, vixie-cron.init: Cleaning git from
+	unnecessary files, which were generated from autotools. Add files or
+	rename according to autotools custom practice.  There were also alternation of configure and makefiles.
+
+2008-01-09  Marcela Maslanova <marca@caladan.englab.brq.redhat.com>
+
+	* Makefile, config.h, config.log, config.status, man/Makefile,
+	man/bitstring.3, man/cron.8, man/crontab.1, man/crontab.5,
+	src/.deps/cron.Po, src/.deps/crontab.Po, src/.deps/database.Po,
+	src/.deps/debug.Po, src/.deps/do_command.Po, src/.deps/entry.Po,
+	src/.deps/env.Po, src/.deps/job.Po, src/.deps/misc.Po,
+	src/.deps/popen.Po, src/.deps/pw_dup.Po, src/.deps/security.Po,
+	src/.deps/user.Po, src/Makefile: Add missing files generated after
+	running ./configure
+
+2008-01-09  Marcela Maslanova <marca@caladan.englab.brq.redhat.com>
+
+	* CHANGES: In CHANGES could be found git-log with last changes.
+
+2008-01-09  Marcela Maslanova <marca@caladan.englab.brq.redhat.com>
+
+	* Makefile.in, aclocal.m4, autom4te.cache/output.0,
+	autom4te.cache/output.1, autom4te.cache/requests,
+	autom4te.cache/traces.0, autom4te.cache/traces.1, config.guess,
+	config.sub, configure, depcomp, install-sh, man/Makefile.in,
+	missing, src/Makefile.in: Now really add all files generated by
+	autotools.
+
+2008-01-09  Marcela Maslanova <marca@caladan.englab.brq.redhat.com>
+
+	* config.h.in: Add binary configure.
+
+2008-01-03  Marcela Maslanova <marca@dhcp-lab-135.englab.brq.redhat.com>
+
+	* vixie-cron.spec: Use changelog instead of spec.
+
+2007-11-30  Marcela Maslanova <marca@dhcp-lab-135.englab.brq.redhat.com>
+
+	* configure.ac: Don't set up MAIL_DATE, because if the user doesn't
+	use sendmail, then he has incorrect time format.
+
+2007-11-19  Marcela Maslanova <marca@dhcp-lab-135.englab.brq.redhat.com>
+
+	* vixie-cron.spec: Upload spec file with fixed bcond macro.
+
+2007-11-12  Marcela Maslanova <marca@dhcp-lab-135.englab.brq.redhat.com>
+
+	* man/cron.8.in, man/crond.8.in, man/crontab.5.in: Man pages are
+	updated for time zone and some small changes.
+
+2007-11-12  Marcela Maslanova <marca@dhcp-lab-135.englab.brq.redhat.com>
+
+	* src/cron.c, src/misc.c: Time zones are now supported.  Setting in
+	cron table CRON_TZ=SomeTimeZone does jobs in this time zone. There
+	was problem with syslog, because it print local time into log only,
+	when I remove ifdef parts from misc.c. With ifdef parts print out
+	the time of 'highest' time zone, which could be bug of rsyslog.
+
+2007-11-12  Marcela Maslanova <marca@dhcp-lab-135.englab.brq.redhat.com>
+
+	* configure.ac: In configure was incorrect path for sendmail. The
+	error occured only when sendmail wasn't set up like default MTA.
+
+2007-11-05  Marcela Maslanova <marca@dhcp-lab-135.englab.brq.redhat.com>
+
+	* src/security.c: Opening credentials is really needed for cron
+	jobs, but not for crontab. Crontab doesn't use credentials from file
+	security.c so we can leave it as it was.
+
+2007-10-30  Marcela Maslanova <marca@dhcp-lab-135.englab.brq.redhat.com>
+
+	* configure.ac: Change version of cron in configure.
+
+2007-10-29  Marcela Maslanova <marca@dhcp-lab-135.englab.brq.redhat.com>
+
+	* vixie-cron.spec: Update spec file - new bcond macro.
+
+2007-10-29  Marcela Maslanova <marca@dhcp-lab-135.englab.brq.redhat.com>
+
+	* src/popen.c: Some cron jobs failed without error message. If the
+	job had too "big" output and no mail client set, then only a part
+	from job was done. The reason was pipe, which has restricted size.
+	rh bugzilla #247228
+
+2007-10-03  Marcela Maslanova <marca@dhcp-lab-135.englab.brq.redhat.com>
+
+	* LICENSE: The file LICENSE is used instead of COPYING.
+
+2007-10-03  Marcela Maslanova <marca@dhcp-lab-135.englab.brq.redhat.com>
+
+	* vixie-cron.spec: Add spec file from rpm package, because there is
+	changelog.
+
+2007-10-03  Marcela Maslanova <marca@dhcp-lab-135.englab.brq.redhat.com>
+
+	* COPYING, ChangeLog, INSTALL, Makefile.am, NEWS, README,
+	configure.ac, doc/CHANGES, doc/CONVERSION, doc/FEATURES,
+	doc/INSTALL, doc/MAIL, doc/Makefile.am, doc/README, doc/THANKS,
+	src/Makefile.am: Deleting and modyfing files with license etc.  The
+	compilation with selinux and audit is optional.
+
+2007-10-02  Marcela Maslanova <marca@dhcp-lab-135.englab.brq.redhat.com>
+
+	* src/user.c: The jobs in RH_CROND_DIR weren't syntactically
+	checked.  Also SYSCRON wasn't checked. The problem is reported into
+	log.
+
+2007-08-28  Marcela Mašláňová <marca@arrakis.(none)>
+
+	* vixie-cron.init: Fix reading arguments from configure file.
+
+2007-08-27  Tomas Janousek <tjanouse@redhat.com>
+
+	* src/security.c: Commented out cron_open_pam_session, it's unused.  Signed-off-by: Tomas Janousek <tjanouse@redhat.com>
+
+2007-08-27  Tomas Janousek <tjanouse@redhat.com>
+
+	* src/security.c: Protect the call to setexeccon with WITH_SELINUX.  Signed-off-by: Tomas Janousek <tjanouse@redhat.com>
+
+2007-08-27  Tomas Janousek <tjanouse@redhat.com>
+
+	* src/misc.c: Compile fix in misc.c.  (I have no f*cking idea why do I do this change now...) Signed-off-by: Tomas Janousek <tjanouse@redhat.com>
+
+2007-08-27  Tomas Janousek <tjanouse@redhat.com>
+
+	* src/crontab.c, src/funcs.h: Kill a few warnings.  Signed-off-by: Tomas Janousek <tjanouse@redhat.com>
+
+2007-08-27  Tomas Janousek <tjanouse@redhat.com>
+
+	* config.h.in, configure.ac: Fix the MAILARG and MAILFMT definitions
+	and regenerate config.h.in.  Signed-off-by: Tomas Janousek <tjanouse@redhat.com>
+
+2007-08-27  Tomas Janousek <tjanouse@redhat.com>
+
+	* configure.ac, src/security.c: Move #define _GNU_SOURCE from
+	security.c to CFLAGS.  (it's needed for HAVE_SELINUX as well) Signed-off-by: Tomas Janousek <tjanouse@redhat.com>
+
+2007-08-27  Tomas Janousek <tjanouse@redhat.com>
+
+	* src/pathnames.h: Don't define SYSLOG in pathnames.h.  It's in configure.ac and gets defined in config.h.  Signed-off-by: Tomas Janousek <tjanouse@redhat.com>
+
+2007-08-27  Tomas Janousek <tjanouse@redhat.com>
+
+	* configure.ac: CRON_GROUP shall not be defined at all.  (also filled in a sensible default in case someone enables it again) Signed-off-by: Tomas Janousek <tjanouse@redhat.com>
+
+2007-08-27  Tomas Janousek <tjanouse@redhat.com>
+
+	* src/Makefile.am: Added -laudit to LDADD.  Signed-off-by: Tomas Janousek <tjanouse@redhat.com>
+
+2007-08-27  mmaslano <mmaslano@redhat.com>
+
+	* configure.ac, src/cron.c, src/cron.h: Version of cron is used from
+	configure.
+
+2007-08-27  mmaslano <mmaslano@redhat.com>
+
+	* configure.ac: Correct setting of path to mail program.
+
+2007-08-27  mmaslano <mmaslano@redhat.com>
+
+	* src/config.h, src/cron.h, src/pw_dup.c: Use config.h generated by
+	autotools.
+
+2007-08-27  mmaslano <mmaslano@redhat.com>
+
+	* src/security.c: Added missing #ifdef WITH_PAM.
+
+2007-08-27  mmaslano <mmaslano@redhat.com>
+
+	* src/funcs.h: Correct definition of cron_popen in .h file.
+
+2007-08-27  Tomas Janousek <tjanouse@redhat.com>
+
+	* src/crontab.c: Added missing #ifdef WITH_PAM.  Signed-off-by: Tomas Janousek <tjanouse@redhat.com>
+
+2007-08-27  Tomas Janousek <tjanouse@redhat.com>
+
+	* src/funcs.h, src/security.c: Make
+	cron_restore_default_security_context return void.  Signed-off-by: Tomas Janousek <tjanouse@redhat.com>
+
+2007-08-27  Tomas Janousek <tjanouse@redhat.com>
+
+	* src/misc.c: Revert "System table wasn't sometimes checked for
+	changes." This reverts commit b18c0c9a01bef691c7b696709cd2f9736ba98a82.  Signed-off-by: Tomas Janousek <tjanouse@redhat.com>
+
+2007-08-24  mmaslano <mmaslano@redhat.com>
+
+	* src/popen.c: rhbz#247228 cron jobs fail semi-randomly if sendmail
+	(or other mail) isn't set. The jobs aren't "sometimes" run, because output, which
+	has to be sent isn't set and the stdin pipe, which is used haven't
+	enough capacity.  The problem is at least reported in log.
+
+2007-08-24  mmaslano <mmaslano@redhat.com>
+
+	* man/crond.8.in, man/crontab.1.in, man/crontab.5.in: Add crond.8
+	(the same as cron.8) manual page and other man pages were updated.
+
+2007-08-24  mmaslano <mmaslano@redhat.com>
+
+	* src/funcs.h: Change definiton from popen.c in header file.
+
+2007-08-24  mmaslano <mmaslano@redhat.com>
+
+	* src/bitstring.h, src/popen.c: For the same license for whole cron,
+	I've removed two files and found almost the same with correct license.
+
+2007-08-24  mmaslano <mmaslano@redhat.com>
+
+	* AUTHORS, CHANGES, CONVERSION, COPYING, ChangeLog, FEATURES,
+	INSTALL, MAIL, Makefile, Makefile.am, NEWS, README, THANKS,
+	bitstring.3, bitstring.h, config.h, config.h.in, configure.ac,
+	cron.8, cron.c, cron.h, crond.sysconfig, crontab.1, crontab.5,
+	crontab.c, database.c, do_command.c, doc/CHANGES, doc/CONVERSION,
+	doc/FEATURES, doc/INSTALL, doc/MAIL, doc/Makefile.am, doc/README,
+	doc/THANKS, entry.c, env.c, externs.h, funcs.h, globals.h, job.c,
+	macros.h, man/Makefile.am, man/bitstring.3.in, man/cron.8.in,
+	man/crontab.1.in, man/crontab.5.in, misc.c, pathnames.h, popen.c,
+	putman.sh, pw_dup.c, security.c, src/Makefile.am, src/bitstring.h,
+	src/config.h, src/cron.c, src/cron.h, src/crontab.c,
+	src/database.c, src/do_command.c, src/entry.c, src/env.c,
+	src/externs.h, src/funcs.h, src/globals.h, src/job.c, src/macros.h,
+	src/misc.c, src/pathnames.h, src/popen.c, src/pw_dup.c,
+	src/security.c, src/structs.h, src/user.c, stamp-h1, structs.h,
+	user.c, vixie-cron.init: Cron source was ready for merge with
+	patches. After the merge I used autotools (files were copied to new dirs and configure.ac and
+	Makefile.am were written).
+
+2007-08-24  mmaslano <mmaslano@redhat.com>
+
+	* cron.h, crontab.c, do_command.c, security.c: Pam authentication
+	wasn't used wise. User's crontab didn't use pam and functions, which were for pam opening etc. were
+	incorrect (wrong credetials).
+
+2007-08-24  mmaslano <mmaslano@redhat.com>
+
+	* crontab.1, security.c: Checking homedir is last, because we need
+	at first set up gid and uid.
+
+2007-08-24  mmaslano <mmaslano@redhat.com>
+
+	* crontab.c: It's possible to use your own tmp dir. Before was /tmp
+	hardwired.
+
+2007-08-24  mmaslano <mmaslano@redhat.com>
+
+	* crontab.5: System table in manual page is mentioned.
+
+2007-08-24  mmaslano <mmaslano@redhat.com>
+
+	* database.c: Hard links on system table break doing jobs.
+
+2007-08-24  mmaslano <mmaslano@redhat.com>
+
+	* misc.c: System table wasn't sometimes checked for changes.
+
+2007-08-24  mmaslano <mmaslano@redhat.com>
+
+	* security.c: Audit: new auditing message is print, when the user
+	isn't allowed to use mls range. Job wasn't runned without warning message.
+
+2007-08-24  mmaslano <mmaslano@redhat.com>
+
+	* misc.c: Because there was typo (- instead of +) jobs wasn't runned
+	after new year.
+
+2007-08-24  mmaslano <mmaslano@redhat.com>
+
+	* cron.8, crontab.1, crontab.5: Errors in manual was fixed and mls
+	range was mentioned.
+
+2007-08-17  mmaslano <mmaslano@redhat.com>
+
+	* cron.c, database.c: Force reload of database when SIGGUP is
+	received.  max_mtime uses dir_name instead of SPOOL_DIR now. (which
+	caused a bug preventing correct detection of changes in
+	RH_CROND_DIR) (comment updated by <tjanouse@redhat.com>)
+
+2007-08-17  mmaslano <mmaslano@redhat.com>
+
+	* crontab.c, do_command.c, funcs.h, security.c: Selinux ranges: for
+	every selinux operation are now checked the ranges of user. Now is set not only context for user, but even
+	ranges(enabled selinux or selinux in mls mode).
+
+2007-08-17  mmaslano <mmaslano@redhat.com>
+
+	* crontab.c: It's possible to change file without changing mtime of
+	file.  So we're stat'ing files for the changes of files.  The detection of
+	not_a_crontab files was added: files started with dot aren't
+	crontabs etc.
+
+2007-08-17  mmaslano <mmaslano@redhat.com>
+
+	* crond.pam: pam.limits.so was substitued by system-auth (pam
+	progress).
+
+2007-08-17  mmaslano <mmaslano@redhat.com>
+
+	* security.c: Part with_selinux now include even the testing of
+	linux context.
+
+2007-08-17  mmaslano <mmaslano@redhat.com>
+
+	* cron.c: Loading database before reaping the child take up time of running the jobs.
+
+2007-08-17  mmaslano <mmaslano@redhat.com>
+
+	* do_command.c: The Auto-Submitted header is defined (and suggested
+	by) RFC3834.  Added into mail header: 'Auto-Submitted: auto-generated'
+
+2007-08-17  mmaslano <mmaslano@redhat.com>
+
+	* cron.8: Fix typo in man pages.
+
+2007-08-17  mmaslano <mmaslano@redhat.com>
+
+	* database.c: It's possible to change file without changing mtime of
+	file.  So we're stat'ing files for the changes of files.  The detection of
+	not_a_crontab files was added: files started with dot aren't
+	crontabs etc.
+
+2007-08-17  mmaslano <mmaslano@redhat.com>
+
+	* crontab.1, crontab.5, crontab.c, funcs.h, security.c: Selinux:
+	option -s added. Header from crontab was removed and now is print into crontab the SELINUX_ROLE_TYPE which specify the
+	permission of user. With mls could one user run some jobs with
+	different roles and security level.
+
+2007-08-17  mmaslano <mmaslano@redhat.com>
+
+	* Makefile, security.c, structs.h: Into with_selinux and with_pam
+	part was added variables used only there. In Makefile are libs set by variables.
+
+2007-08-17  mmaslano <mmaslano@redhat.com>
+
+	* cron.c, crontab.5, do_command.c, externs.h, globals.h: Now is
+	possible to use different character encodings for mailed cron job
+	output by setting the CONTENT_TYPE and CONTENT_TRANSFER_ENCODING variables in
+	crontabs, to the correct values of the mail headers of those names.
+
+2007-08-17  mmaslano <mmaslano@redhat.com>
+
+	* crond.pam: Module pam_limit.so was added to default configuration.
+
+2007-08-17  mmaslano <mmaslano@redhat.com>
+
+	* security.c: Fixing "security": minutely job are made realy only
+	one time per minute. If the job is delayed into next minute, then it's skipped
+	for this minute.
+
+2007-08-17  mmaslano <mmaslano@redhat.com>
+
+	* Makefile, crontab.c, do_command.c, funcs.h, popen.c, security.c,
+	user.c: The security.c file was filled with selinux and pam often used functions, which were removed from other files.
+
+2007-08-17  mmaslano <mmaslano@redhat.com>
+
+	* cron.8, cron.c, do_command.c, globals.h: Option -m was added: it's
+	possible to use something else then sendmail.
+
+2007-08-17  mmaslano <mmaslano@redhat.com>
+
+	* Makefile, misc.c: Now is cron with audit. Complaining about
+	denying users.
+
+2007-08-17  mmaslano <mmaslano@redhat.com>
+
+	* crontab.c, do_command.c, env.c, misc.c, pw_dup.c: The return value
+	were added because of too many warning messages from compiler. Also the variables were initialized.
+
+2007-08-17  mmaslano <mmaslano@redhat.com>
+
+	* do_command.c: 'Build enviroment' is set in pam section for better
+	security.
+
+2007-08-17  mmaslano <mmaslano@redhat.com>
+
+	* config.h: Comments were changed.
+
+2007-08-17  mmaslano <mmaslano@redhat.com>
+
+	* user.c: Selinux: Instead of getting context and then the username
+	is used function getuserbyname.
+
+2007-08-17  mmaslano <mmaslano@redhat.com>
+
+	* crontab.c: Too many flags was set for lstating crontab. Time of
+	change is checked and uids for reading new crontab are ok.
+
+2007-08-17  mmaslano <mmaslano@redhat.com>
+
+	* database.c, funcs.h, structs.h, user.c: List corruption when items
+	are removed from /etc/cron.d.  Variable tabname is filled with file or NULL and checked when
+	crontab is changed.
+
+2007-08-17  mmaslano <mmaslano@redhat.com>
+
+	* crond.pam: Crond.pam was changed according to pam modules.  The pam_limits.so could be used.
+
+2007-08-17  mmaslano <mmaslano@redhat.com>
+
+	* crontab.c: lstat instead of stat can stat even symlink itself, not
+	the file that it refers to.
+
+2007-08-17  mmaslano <mmaslano@redhat.com>
+
+	* macros.h: Redefined limits of macros.
+
+2007-08-17  mmaslano <mmaslano@redhat.com>
+
+	* do_command.c: If fork fails, pam has to close session.
+
+2007-08-17  mmaslano <mmaslano@redhat.com>
+
+	* crontab.c: fix of bug rhbz#154065: crontab should not use
+	waitpid(...,WUNTRACED) and stop itself if its child is stopped
+
+2007-08-17  mmaslano <mmaslano@redhat.com>
+
+	* do_command.c: PAM hadn't closed session.
+
+2007-08-17  mmaslano <mmaslano@redhat.com>
+
+	* do_command.c, user.c: Selinux doesn't segfault, because of:
+	permissive mode returns 0 and selinux enabled is also check context.
+
+2007-08-17  mmaslano <mmaslano@redhat.com>
+
+	* cron.c, do_command.c, globals.h: Cron validate the recipient only
+	when CRON_VALIDATE_MAILRCPTS isn't null.  Validating of email
+	recipient is default off.
+
+2007-08-17  mmaslano <mmaslano@redhat.com>
+
+	* do_command.c: Set item in pam - "cron".
+
+2007-08-17  mmaslano <mmaslano@redhat.com>
+
+	* do_command.c, misc.c, pw_dup.c: Initialize some important
+	variables.
+
+2007-08-17  mmaslano <mmaslano@redhat.com>
+
+	* cron.8, cron.c, database.c, globals.h: Add -p option for crontab.  Without the -p option /etc/crontab must not be writable by any user
+	other than root, no crontab files may be links, or linked to by any
+	other file, and no crontab files may be executable, or be writable
+	by any user other than their owner
+
+2007-08-17  mmaslano <mmaslano@redhat.com>
+
+	* Makefile, crontab.c: Fix for ppc: int ch='\0' is initialized.
+
+2007-08-17  mmaslano <mmaslano@redhat.com>
+
+	* crontab.c: Don't read the header of crontab.
+
+2007-08-17  mmaslano <mmaslano@redhat.com>
+
+	* misc.c: For setegid are used saved gid instead of getgid().  Now are swaped back the correct gid.
+
+2007-08-17  mmaslano <mmaslano@redhat.com>
+
+	* misc.c: Allow root's crontab (check with getuid).
+
+2007-08-17  mmaslano <mmaslano@redhat.com>
+
+	* crontab.c: According to changes in selinux
+	selinux_check_passwd_access is now enough for examinitaion of user's password.
+
+2007-08-17  mmaslano <mmaslano@redhat.com>
+
+	* user.c: Context in selinux is now correctly undone.
+
+2007-08-17  mmaslano <mmaslano@redhat.com>
+
+	* cron.8, crontab.5, database.c: /etc/crontab is now writable only
+	by root. No links on this file are allowed.
+
+2007-08-17  mmaslano <mmaslano@redhat.com>
+
+	* crontab.1, crontab.c: Add -i option to crontab, which print prompt
+	before removing crontab.
+
+2007-08-17  mmaslano <mmaslano@redhat.com>
+
+	* crontab.5: Nicknames were mentioned in man pages (@yearly,
+	@hourly, etc).
+
+2007-08-17  mmaslano <mmaslano@redhat.com>
+
+	* crontab.c: Crontab is stat instead of fstat and crontab is
+	reopened for reading new stdin.  This change should: Allowed editors
+	such as 'gedit' which do not modify original file, but which
+	rename(2) a temp file to original, to be used by crontab -e (bug
+	129170).
+
+2007-08-17  mmaslano <mmaslano@redhat.com>
+
+	* do_command.c: In lower version of pam was re-open log needed
+	(rhel-4 and lower).
+
+2007-08-17  mmaslano <mmaslano@redhat.com>
+
+	* crond.pam: Change in pam configuration file (auth sufficient is
+	now used).
+
+2007-08-17  mmaslano <mmaslano@redhat.com>
+
+	* crontab.c, user.c: Selinux for crontab: checking users with
+	selinux.  User is fixed from char to const char.
+
+2007-08-17  mmaslano <mmaslano@redhat.com>
+
+	* database.c: Hardwired 'system' wasn't needed.
+
+2007-08-17  mmaslano <mmaslano@redhat.com>
+
+	* Makefile, crond.pam: Add file crond.pam, which has rules for pam
+	sessions.  In Makefile is now crond.pam installed.
+
+2007-08-17  mmaslano <mmaslano@redhat.com>
+
+	* Makefile:  Now we compile with pam flags and libs.
+
+2007-08-17  mmaslano <mmaslano@redhat.com>
+
+	* cron.8, cron.h, do_command.c: PAM support was added: open sessions
+	and set credentials for users.
+
+2007-08-17  mmaslano <mmaslano@redhat.com>
+
+	* Makefile:  In Makefile are now LIB = -lselinux and -DWITH_SELINUX flags.
+
+2007-08-17  mmaslano <mmaslano@redhat.com>
+
+	* FEATURES, cron.8, crontab.1, crontab.5: Features was added into
+	manual.
+
+2007-08-17  mmaslano <mmaslano@redhat.com>
+
+	* crontab.c: Remove header in user's crontab.
+
+2007-08-17  mmaslano <mmaslano@redhat.com>
+
+	* misc.c: Logs now inform about creating crontabs for users, which
+	aren't allowed to use crontab.  It's for user in cron.{allow,deny}
+
+2007-08-17  mmaslano <mmaslano@redhat.com>
+
+	* crontab.c: Change behavior to allow crontab to take stdin with no
+	'-'.
+
+2007-08-17  mmaslano <mmaslano@redhat.com>
+
+	* database.c: RH_CROND was added in programme - stating directory.
+	In RH_CROND are system crontables.
+
+2007-08-17  mmaslano <mmaslano@redhat.com>
+
+	* misc.c: Use snprintf instead of sprintf.
+
+2007-08-17  mmaslano <mmaslano@redhat.com>
+
+	* do_command.c, popen.c: Use fork instead of vfork.      Add signal: Our grandparent is watching for our parent's death
+	    by catching SIGCHLD. Meanwhile, our parent will use wait     explicitly and so has disabled SIGCHLD. So now it's     time to reset SIGCHLD handling.
+
+2007-08-17  mmaslano <mmaslano@redhat.com>
+
+	* cron.h, database.c, do_command.c, funcs.h, structs.h, user.c:  Add first selinux patch. Loading users through selinux scontext.
+
+2007-08-17  mmaslano <mmaslano@redhat.com>
+
+	* config.h: Redefine sendmail options.
+
+2007-08-17  mmaslano <mmaslano@redhat.com>
+
+	* pathnames.h:  Change path names for redhat/fedora system.
+
+2007-08-17  mmaslano <mmaslano@redhat.com>
+
+	* Makefile: Changes in Makefile: flags, -pie option, permission and
+	installation paths for redhat/fedora system.
+
+2007-08-17  mmaslano <mmaslano@redhat.com>
+
+	* Source files of vixie-cron-4.1.
+

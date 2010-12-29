@@ -1,0 +1,8 @@
+<map id="G" name="G">
+<area shape="rect" href="$classWt_1_1WHTML5Audio.html" title="A widget that plays audio using the HTML5 audio element." alt="" coords="5,393,141,420"/>
+<area shape="rect" href="$classWt_1_1WHTML5Video.html" title="A widget that renders video using the HTML5 video element." alt="" coords="165,393,301,420"/>
+<area shape="rect" href="$classWt_1_1WInteractWidget.html" title="An abstract widget that can receive user&#45;interface interaction." alt="" coords="80,239,227,265"/>
+<area shape="rect" href="$classWt_1_1WWebWidget.html" title="A base class for widgets with an HTML counterpart." alt="" coords="91,161,216,188"/>
+<area shape="rect" href="$classWt_1_1WWidget.html" title="The abstract base class for a user&#45;interface component." alt="" coords="104,84,203,111"/>
+<area shape="rect" href="$classWt_1_1WObject.html" title="A base class for objects that participate in the signal/slot system." alt="" coords="105,7,201,33"/>
+</map>

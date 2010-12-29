@@ -1,0 +1,5 @@
+<map id="G" name="G">
+<area shape="rect" href="$classWt_1_1WStringListModel.html" title="An model that manages a list of strings." alt="" coords="16,239,171,265"/>
+<area shape="rect" href="$classWt_1_1WAbstractItemModel.html" title="An abstract model for use with Wt&#39;s view classes." alt="" coords="5,84,181,111"/>
+<area shape="rect" href="$classWt_1_1WObject.html" title="A base class for objects that participate in the signal/slot system." alt="" coords="45,7,141,33"/>
+</map>

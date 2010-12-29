@@ -1,0 +1,50 @@
+<map id="G" name="G">
+<area shape="rect" href="$classWt_1_1WSignalMapper.html" title="Wt::WSignalMapper\&lt; Coordinate, NoClass \&gt;" alt="" coords="177,5,481,32"/>
+<area shape="rect" href="$classWt_1_1WSignalMapper.html" title="Wt::WSignalMapper\&lt; int \&gt;" alt="" coords="235,56,424,83"/>
+<area shape="rect" href="$classWt_1_1WSignalMapper.html" title="Wt::WSignalMapper\&lt; StandardButton, NoClass \&gt;" alt="" coords="161,107,497,133"/>
+<area shape="rect" href="$classWt_1_1WSignalMapper.html" title="Wt::WSignalMapper\&lt; WModelIndex, WMouseEvent \&gt;" alt="" coords="153,157,505,184"/>
+<area shape="rect" href="$classWt_1_1Ext_1_1ToolTipConfig.html" title="A configuration object for tool tips." alt="" coords="252,208,407,235"/>
+<area shape="rect" href="$classWt_1_1WAbstractArea.html" title="Abstract base class for interactive areas in a widget." alt="" coords="260,259,399,285"/>
+<area shape="rect" href="$classWt_1_1WAbstractItemDelegate.html" title="Abstract delegate class for rendering an item in a MVC view." alt="" coords="232,309,427,336"/>
+<area shape="rect" href="$classWt_1_1WAbstractItemModel.html" title="An abstract model for use with Wt&#39;s view classes." alt="" coords="241,360,417,387"/>
+<area shape="rect" href="$classWt_1_1WApplication.html" title="Represents an application instance for a single session." alt="" coords="267,411,392,437"/>
+<area shape="rect" href="$classWt_1_1WButtonGroup.html" title="A class for grouping radio buttons logically together." alt="" coords="260,461,399,488"/>
+<area shape="rect" href="$classWt_1_1WCanvasPaintDevice.html" title="A paint device for rendering using the HTML 5 &lt;canvas&gt; element." alt="" coords="241,512,417,539"/>
+<area shape="rect" href="$classWt_1_1WItemSelectionModel.html" title="A class that represents a selection for a WAbstractItemView." alt="" coords="239,563,420,589"/>
+<area shape="rect" href="$classWt_1_1WLayout.html" title="An abstract base class for layout managers." alt="" coords="280,613,379,640"/>
+<area shape="rect" href="$classWt_1_1WMenuItem.html" title="A single item in a menu." alt="" coords="269,664,389,691"/>
+<area shape="rect" href="$classWt_1_1WResource.html" title="An object which can be rendered in the HTTP protocol." alt="" coords="272,715,387,741"/>
+<area shape="rect" href="$classWt_1_1WScrollBar.html" title="A scrollbar attached to a scroll area." alt="" coords="273,765,385,792"/>
+<area shape="rect" href="$classWt_1_1WSignalMapper.html" title="A utility class to connect multiple senders to a single slot." alt="" coords="227,816,432,843"/>
+<area shape="rect" href="$classWt_1_1WSocketNotifier.html" title="A utility class for asynchronous notification of socket activity." alt="" coords="256,867,403,893"/>
+<area shape="rect" href="$classWt_1_1WSound.html" title="Utility class to play a sound." alt="" coords="281,917,377,944"/>
+<area shape="rect" href="$classWt_1_1WTableColumn.html" title="A table column." alt="" coords="261,968,397,995"/>
+<area shape="rect" href="$classWt_1_1WTableRow.html" title="A table row." alt="" coords="273,1019,385,1045"/>
+<area shape="rect" href="$classWt_1_1WTimer.html" title="A utility class which provides timer signals and single&#45;shot timers." alt="" coords="284,1069,375,1096"/>
+<area shape="rect" href="$classWt_1_1WValidator.html" title="A validator is used to validate user input according to pre&#45;defined rules." alt="" coords="273,1120,385,1147"/>
+<area shape="rect" href="$classWt_1_1WWidget.html" title="The abstract base class for a user&#45;interface component." alt="" coords="280,1171,379,1197"/>
+<area shape="rect" href="$classWt_1_1WCircleArea.html" title="A interactive area in a widget, specified by a circle." alt="" coords="587,56,707,83"/>
+<area shape="rect" href="$classWt_1_1WPolygonArea.html" title="An interactive area in a widget, specified by a polygon." alt="" coords="579,107,715,133"/>
+<area shape="rect" href="$classWt_1_1WRectArea.html" title="A interactive area in a widget, specified by a rectangle." alt="" coords="591,157,703,184"/>
+<area shape="rect" href="$classWt_1_1WItemDelegate.html" title="Standard delegate class for rendering a view item." alt="" coords="575,208,719,235"/>
+<area shape="rect" href="$classWt_1_1WAbstractListModel.html" title="An abstract list model for use with Wt&#39;s view classes." alt="" coords="563,259,731,285"/>
+<area shape="rect" href="$classWt_1_1WAbstractProxyModel.html" title="An abstract proxy model for Wt&#39;s item models." alt="" coords="556,309,737,336"/>
+<area shape="rect" href="$classWt_1_1WAbstractTableModel.html" title="An abstract table model for use with Wt&#39;s view classes." alt="" coords="557,360,736,387"/>
+<area shape="rect" href="$classWt_1_1WStandardItemModel.html" title="A standard data model, which stores its data in memory." alt="" coords="556,411,737,437"/>
+<area shape="rect" href="$classWt_1_1WBorderLayout.html" title="A layout manager which divides the container region in five regions." alt="" coords="576,461,717,488"/>
+<area shape="rect" href="$classWt_1_1WBoxLayout.html" title="A layout manager which arranges widgets horizontally or vertically." alt="" coords="585,512,708,539"/>
+<area shape="rect" href="$classWt_1_1WDefaultLayout.html" title="A default layout manager." alt="" coords="575,563,719,589"/>
+<area shape="rect" href="$classWt_1_1WFitLayout.html" title="A layout manager which spans a single widget to all available space." alt="" coords="591,613,703,640"/>
+<area shape="rect" href="$classWt_1_1WGridLayout.html" title="A layout manager which arranges widgets in a grid." alt="" coords="584,664,709,691"/>
+<area shape="rect" href="$classWt_1_1WSubMenuItem.html" title="A menu item that contains a nested sub menu." alt="" coords="575,715,719,741"/>
+<area shape="rect" href="$classWt_1_1Ext_1_1DataStore.html" title="A resource that serializes data from a data model." alt="" coords="577,765,716,792"/>
+<area shape="rect" href="$classWt_1_1WFileResource.html" title="A resource which streams data from a local file." alt="" coords="580,816,713,843"/>
+<area shape="rect" href="$classWt_1_1WMemoryResource.html" title="A resource which streams data from memory." alt="" coords="564,867,729,893"/>
+<area shape="rect" href="$classWt_1_1WPdfImage.html" title="A paint device for rendering to a PDF." alt="" coords="589,917,704,944"/>
+<area shape="rect" href="$classWt_1_1WRasterImage.html" title="A paint device for rendering to a raster image." alt="" coords="579,968,715,995"/>
+<area shape="rect" href="$classWt_1_1WSvgImage.html" title="A paint device for rendering using Scalable Vector Graphics (SVG)." alt="" coords="587,1019,707,1045"/>
+<area shape="rect" href="$classWt_1_1WDateValidator.html" title="A validator for date input." alt="" coords="575,1069,719,1096"/>
+<area shape="rect" href="$classWt_1_1WDoubleValidator.html" title="A validator for validating floating point user input." alt="" coords="568,1120,725,1147"/>
+<area shape="rect" href="$classWt_1_1WIntValidator.html" title="A validator that validates integer user input." alt="" coords="583,1171,711,1197"/>
+<area shape="rect" href="$classWt_1_1WLengthValidator.html" title="A validator that checks the string length of user input." alt="" coords="569,1221,724,1248"/>
+</map>

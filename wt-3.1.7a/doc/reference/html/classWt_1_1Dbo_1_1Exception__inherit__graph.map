@@ -1,0 +1,5 @@
+<map id="G" name="G">
+<area shape="rect" href="$classWt_1_1Dbo_1_1NoUniqueResultException.html" title="Exception thrown when a query unexpectedly finds a non&#45;unique result." alt="" coords="196,5,439,32"/>
+<area shape="rect" href="$classWt_1_1Dbo_1_1ObjectNotFoundException.html" title="Exception thrown when trying to load a non&#45;existing object." alt="" coords="196,56,439,83"/>
+<area shape="rect" href="$classWt_1_1Dbo_1_1StaleObjectException.html" title="Exception thrown when Wt::Dbo detects a concurrent modification" alt="" coords="209,107,425,133"/>
+</map>

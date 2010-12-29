@@ -1,0 +1,7 @@
+<map id="G" name="G">
+<area shape="rect" href="$classWt_1_1Ext_1_1ToolBar.html" title="A class that represents a tool bar (or a menu bar)." alt="" coords="25,316,145,343"/>
+<area shape="rect" href="$classWt_1_1Ext_1_1Widget.html" title="An abstract base class for all Ext widgets." alt="" coords="28,239,143,265"/>
+<area shape="rect" href="$classWt_1_1WWebWidget.html" title="A base class for widgets with an HTML counterpart." alt="" coords="23,161,148,188"/>
+<area shape="rect" href="$classWt_1_1WWidget.html" title="The abstract base class for a user&#45;interface component." alt="" coords="36,84,135,111"/>
+<area shape="rect" href="$classWt_1_1WObject.html" title="A base class for objects that participate in the signal/slot system." alt="" coords="37,7,133,33"/>
+</map>

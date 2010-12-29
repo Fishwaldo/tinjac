@@ -1,0 +1,7 @@
+<map id="G" name="G">
+<area shape="rect" href="$classWt_1_1WTableView.html" title="An MVC View widget for tabular data." alt="" coords="5,316,123,343"/>
+<area shape="rect" href="$classWt_1_1WTreeView.html" title="A view class that displays a model as a tree or tree table." alt="" coords="147,316,259,343"/>
+<area shape="rect" href="$classWt_1_1WCompositeWidget.html" title="A widget that hides the implementation of composite widgets." alt="" coords="49,161,217,188"/>
+<area shape="rect" href="$classWt_1_1WWidget.html" title="The abstract base class for a user&#45;interface component." alt="" coords="84,84,183,111"/>
+<area shape="rect" href="$classWt_1_1WObject.html" title="A base class for objects that participate in the signal/slot system." alt="" coords="85,7,181,33"/>
+</map>

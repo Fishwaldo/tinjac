@@ -1,0 +1,5 @@
+<map id="G" name="G">
+<area shape="rect" href="$classWt_1_1WAbstractProxyModel.html" title="An abstract proxy model for Wt&#39;s item models." alt="" coords="8,161,189,188"/>
+<area shape="rect" href="$classWt_1_1WAbstractItemModel.html" title="An abstract model for use with Wt&#39;s view classes." alt="" coords="11,84,187,111"/>
+<area shape="rect" href="$classWt_1_1WObject.html" title="A base class for objects that participate in the signal/slot system." alt="" coords="51,7,147,33"/>
+</map>

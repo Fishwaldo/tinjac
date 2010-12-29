@@ -1,0 +1,6 @@
+<map id="G" name="G">
+<area shape="rect" href="$classWt_1_1WViewWidget.html" title="An abstract base class for an MVC view that is rendered using a widget." alt="" coords="65,239,193,265"/>
+<area shape="rect" href="$classWt_1_1WWebWidget.html" title="A base class for widgets with an HTML counterpart." alt="" coords="67,161,192,188"/>
+<area shape="rect" href="$classWt_1_1WWidget.html" title="The abstract base class for a user&#45;interface component." alt="" coords="80,84,179,111"/>
+<area shape="rect" href="$classWt_1_1WObject.html" title="A base class for objects that participate in the signal/slot system." alt="" coords="81,7,177,33"/>
+</map>

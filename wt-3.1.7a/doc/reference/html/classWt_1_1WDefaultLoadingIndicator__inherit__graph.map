@@ -1,0 +1,8 @@
+<map id="G" name="G">
+<area shape="rect" href="$classWt_1_1WText.html" title="A widget that renders (XHTML) text." alt="" coords="39,316,119,343"/>
+<area shape="rect" href="$classWt_1_1WInteractWidget.html" title="An abstract widget that can receive user&#45;interface interaction." alt="" coords="5,239,152,265"/>
+<area shape="rect" href="$classWt_1_1WWebWidget.html" title="A base class for widgets with an HTML counterpart." alt="" coords="16,161,141,188"/>
+<area shape="rect" href="$classWt_1_1WWidget.html" title="The abstract base class for a user&#45;interface component." alt="" coords="29,84,128,111"/>
+<area shape="rect" href="$classWt_1_1WObject.html" title="A base class for objects that participate in the signal/slot system." alt="" coords="31,7,127,33"/>
+<area shape="rect" href="$classWt_1_1WLoadingIndicator.html" title="An abstract interface for a loading indicator." alt="" coords="143,316,303,343"/>
+</map>
