@@ -1,0 +1,25 @@
+This is not just another cron
+
+* Support Standard Vixie Crontab
+* rewritten in C++
+* Support the following Interfaces:
+	- Scripts/Executables
+	- Databases (via CPPDB?)
+	- WebCron (connect to a URL)
+	- innotify of files added/modified
+* Load Average Control
+* IO Utilization Control 
+* Remote HTML Interface (with Witty)
+* Remote Control/Distribution of Jobs
+* Capture output of Jobs and filter through Regex (to be possibly passed
+  onto other jobs)
+* Job Chaining (execute one job after another completes)
+* Job Serialization (Capture output from previous job, feed to next job)
+* Mailto Replacement (to support remote users?)
+* Mail Queuing - Combine Job output into single summary emails
+
+Components:
+Tinjac 	- The Crond Replacement.
+crontab - to edit standard crontabs
+Tinjacd - The tinjac Controller (optional - No needed for standalone
+	  operations)
