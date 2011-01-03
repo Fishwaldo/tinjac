@@ -1,0 +1,66 @@
+#                                               -*- Autoconf -*-
+# Process this file with autoconf to produce a configure script.
+AC_PREREQ(2.61)
+AC_INIT(Tinjac, 0.1)
+AC_CONFIG_AUX_DIR(autotools)
+AC_CONFIG_SRCDIR([src/main.cpp])
+AC_CONFIG_HEADER([include/config.h])
+AC_CONFIG_MACRO_DIR(autotools)
+#AC_PREFIX_DEFAULT(~/NeoStats3.0)
+AC_CACHE_LOAD
+AM_INIT_AUTOMAKE(silent-rules)
+AM_SILENT_RULES([yes])
+AM_MAINTAINER_MODE
+#AC_MSG_HEADER([Configuring Core Now])
+
+AC_LIBTOOL_DLOPEN
+dnl AC_DISABLE_SHARED
+dnl AC_LIBTOOL_WIN32_DLL
+dnl AC_LIBLTDL_CONVENIENCE
+
+# Checks for programs.
+AC_PROG_CC
+AC_PROG_CXX
+AC_PROG_LIBTOOL
+AC_PROG_YACC 
+AC_PROG_LEX
+AC_PATH_PROG( SED, sed, , $PATH:/usr/bin:/usr/local/bin)
+
+AX_BOOST_BASE(1.37)
+AX_BOOST_SYSTEM
+AX_BOOST_ASIO
+AX_BOOST_SIGNALS
+AX_BOOST_PROGRAM_OPTIONS
+AX_BOOST_FILESYSTEM
+AX_BOOST_DATE_TIME
+
+dnl check if we are running with Debug....
+AC_MSG_CHECKING(Whether to Enable Debuging...)
+AC_ARG_ENABLE(debug,
+AC_HELP_STRING([--enable-debug], [Enable Debuging]),
+[ case "$enableval" in
+  yes)
+	AC_DEFINE(DEBUG, 1, 'Enable Debugging')
+	CXXFLAGS="$CFLAGS -ggdb -Wall -O0"
+	AC_MSG_RESULT(yes - Watch your Log Files)
+	;;
+  *)
+	CXXFLAGS="$CFLAGS -DNDEBUG"
+	AC_MSG_RESULT(no)
+	;;
+  esac],
+CFLAGS="$CFLAGS -DNDEBUG"
+AC_MSG_RESULT(no)
+)
+
+AC_CONFIG_FILES(Makefile include/Makefile src/Makefile)
+AC_CACHE_SAVE
+AC_OUTPUT
+#AC_MSG_HEADER([Configuration complete.])
+if test ! -f .hush; then \
+	read -p "Press Enter key to read the release notes"; \
+	clear; \
+	more README; \
+	echo "Run 'make' (or 'gmake' on some systems) to compile Tinjac."; \
+	echo "If you require support, see the README file."; \
+fi;
